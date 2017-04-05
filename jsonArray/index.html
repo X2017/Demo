@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var jsonData = {
+					la: [
+						[1, 1],
+						[1, 2]
+					],
+					lb: [
+						[1, 3],
+						[1, 4]
+					],
+					lc: [
+						[1, 5],
+						[1, 6]
+					],
+					sa: [
+						[1, 7],
+						[1, 8]
+					],
+					sb: [
+						[1, 9],
+						[1, 10]
+					],
+					sc: [
+						[1, 11],
+						[1, 12]
+					]
+				}
+			var arr = [];
+			var count = 0;
+			for(var i in jsonData) {
+				arr[count] = [];
+				for(var j = 0; j < jsonData[i].length; j++){
+					arr[count].push(jsonData[i][j][1]);
+				}
+				count++;
+			}
+			l(arr);
+			function l(n) {
+				console.log(n);
+			}
+		</script>
+	</body>
+
+</html>

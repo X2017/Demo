@@ -1,0 +1,17 @@
+#contentNav dd{
+    line-height: 30px;
+}#contentNav dd a{
+    text-indent: 55px;
+	font-weight: normal;
+}
+.proList li{
+	float: left;
+	width: 200px;
+	margin-right: 20px;
+	text-align: center;
+}.proList li a{
+	color: #333;
+}.proList img{
+	width: 200px;
+	height: 200px;
+}

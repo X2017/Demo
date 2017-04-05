@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("#button").click(function() {
+					//console.log(getTableData("body"));
+				});
+			});
+
+			function getTableData(element) {
+				var data = []; //清空 避免数据叠加
+				//标题
+				$.each($(element).find('th'), function(i, item) {
+					if($(item).css('display') != 'none') {
+						var key = item.parentNode.rowIndex + "_" + item.cellIndex + "_" + item.rowSpan + "_" + item.colSpan + "_1";
+						var itemData = {};
+						itemData['' + key + ''] = item.innerText;
+						data.push(itemData);
+					}
+				});
+				//内容
+				//console.log($(element).find('td'));
+				$.each($(element).find('td'), function(i, item) {
+					//console.log(i);
+					//console.log(item);
+					if($(item).css('display') != 'none') {
+						var key = item.parentNode.rowIndex + "_" + item.cellIndex + "_" + item.rowSpan + "_" + item.colSpan + "_0";
+						var itemData = {};
+						itemData['' + key + ''] = item.innerText;
+						data.push(itemData);
+					}
+				});
+				return data;
+			}
+			
+			var console = console || { log: function() { return; } }
+			$(function() {
+				var method;
+				var noop = function() {};
+				var methods = [
+					'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+					'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+					'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+					'timeStamp', 'trace', 'warn'
+				];
+				var length = methods.length;
+				var console = (window.console = window.console || {});
+				while(length--) {
+					method = methods[length];
+					// Only stub undefined methods.
+					if(!console[method]) {
+						console[method] = noop;
+					}
+				}
+			}());
+			console.log(this);
+		</script>
+	</head>
+
+	<body>
+		<button id="button">button</button>
+		<table id="table" border="" cellspacing="" cellpadding="">
+			<div class="datagrid-header" style="width: 1602px; height: 24px;">
+				<div class="datagrid-header-inner" style="display: block;">
+					<table class="datagrid-htable" style="height: 25px;" cellspacing="0" cellpadding="0" border="0">
+						<tbody>
+							<tr class="datagrid-header-row">
+								<td field="mpName" class="">
+									<div class="datagrid-cell datagrid-cell-c1-mpName"><span>回路名称</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="mpTypeName" class="">
+									<div class="datagrid-cell datagrid-cell-c1-mpTypeName"><span>用途</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="00时" class="">
+									<div class="datagrid-cell datagrid-cell-c1-00时"><span>00时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="01时">
+									<div class="datagrid-cell datagrid-cell-c1-01时"><span>01时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="02时">
+									<div class="datagrid-cell datagrid-cell-c1-02时"><span>02时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="03时">
+									<div class="datagrid-cell datagrid-cell-c1-03时"><span>03时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="04时">
+									<div class="datagrid-cell datagrid-cell-c1-04时"><span>04时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="05时">
+									<div class="datagrid-cell datagrid-cell-c1-05时"><span>05时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="06时">
+									<div class="datagrid-cell datagrid-cell-c1-06时"><span>06时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="07时">
+									<div class="datagrid-cell datagrid-cell-c1-07时"><span>07时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="08时">
+									<div class="datagrid-cell datagrid-cell-c1-08时"><span>08时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="09时">
+									<div class="datagrid-cell datagrid-cell-c1-09时"><span>09时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="10时">
+									<div class="datagrid-cell datagrid-cell-c1-10时"><span>10时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="11时">
+									<div class="datagrid-cell datagrid-cell-c1-11时"><span>11时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="12时">
+									<div class="datagrid-cell datagrid-cell-c1-12时"><span>12时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="13时">
+									<div class="datagrid-cell datagrid-cell-c1-13时"><span>13时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="14时">
+									<div class="datagrid-cell datagrid-cell-c1-14时"><span>14时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="15时">
+									<div class="datagrid-cell datagrid-cell-c1-15时"><span>15时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="16时">
+									<div class="datagrid-cell datagrid-cell-c1-16时"><span>16时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="17时">
+									<div class="datagrid-cell datagrid-cell-c1-17时"><span>17时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="18时">
+									<div class="datagrid-cell datagrid-cell-c1-18时"><span>18时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="19时">
+									<div class="datagrid-cell datagrid-cell-c1-19时"><span>19时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="20时">
+									<div class="datagrid-cell datagrid-cell-c1-20时"><span>20时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="21时">
+									<div class="datagrid-cell datagrid-cell-c1-21时"><span>21时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="22时">
+									<div class="datagrid-cell datagrid-cell-c1-22时"><span>22时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+								<td field="23时">
+									<div class="datagrid-cell datagrid-cell-c1-23时"><span>23时</span><span class="datagrid-sort-icon"></span></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="datagrid-body" style="width: 1602px; margin-top: 0px; height: 531px; overflow-x: hidden;">
+				<table class="datagrid-btable" cellspacing="0" cellpadding="0" border="0">
+					<tbody>
+						<tr id="datagrid-row-r1-2-0" datagrid-row-index="0" class="datagrid-row" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">1#专变进线 1D5柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">未定义</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">1217.34</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">1217.34</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">1217.34</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">1217.34</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">1217.34</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">1217.34</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">1217.34</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">1217.34</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">1217.34</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">1217.34</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-1" datagrid-row-index="1" class="datagrid-row datagrid-row-alt" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">1高压 G1进线柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">未定义</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">45.02</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">45.24</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">45.46</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">45.67</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">45.90</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">46.11</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">46.33</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">46.56</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">46.77</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">46.98</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-2" datagrid-row-index="2" class="datagrid-row" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">2#专变进线 2D1柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">未定义</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">14563.16</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">14564.93</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">14566.73</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">14568.51</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">14570.34</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">14572.10</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">14573.92</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">14575.71</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">14577.44</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">14579.18</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-3" datagrid-row-index="3" class="datagrid-row datagrid-row-alt" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">4#空调机房AP13 2D6-1柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">3261.47</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">3261.74</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">3262.00</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">3262.27</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">3262.54</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">3262.81</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">3263.07</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">3263.20</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">3263.33</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">3263.48</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-4" datagrid-row-index="4" class="datagrid-row" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">包装车间AP12 2D6-3柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">3383.30</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">3383.55</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">3383.83</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">3384.14</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">3384.42</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">3384.70</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">3385.03</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">3385.33</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">3385.68</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">3386.04</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-5" datagrid-row-index="5" class="datagrid-row datagrid-row-alt" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">纯水站 2D5-1柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">6281.00</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">6281.51</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">6281.87</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">6282.16</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">6282.62</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">6282.91</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">6283.37</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">6283.74</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">6284.28</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">6284.76</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-6" datagrid-row-index="6" class="datagrid-row" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">低压配电室KZX电柜 2D5-4柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">5681.28</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">5681.91</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">5682.51</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">5683.18</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">5683.91</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">5684.51</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">5685.15</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">5685.94</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">5686.65</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">5687.24</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-7" datagrid-row-index="7" class="datagrid-row datagrid-row-alt" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">低压配电室SF1 2D5-2柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">1.24</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">1.24</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">1.24</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">1.24</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">1.24</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">1.24</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">1.24</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">1.24</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">1.24</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">1.24</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-8" datagrid-row-index="8" class="datagrid-row" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">低压配电室消防主电SF1 2D6-6柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">6.19</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">6.19</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">6.19</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">6.19</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">6.19</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">6.19</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">6.19</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">6.19</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">6.19</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">6.19</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-9" datagrid-row-index="9" class="datagrid-row datagrid-row-alt" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">低压配电室应急照明ALE 2D6-5柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">1782.74</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">1782.91</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">1783.08</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">1783.26</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">1783.43</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">1783.60</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">1783.78</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">1783.95</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">1784.12</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">1784.29</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-10" datagrid-row-index="10" class="datagrid-row" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">低压配电室照明插座AL 2D6-4柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">7814.40</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">7815.11</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">7815.83</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">7816.56</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">7817.29</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">7818.02</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">7818.75</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">7819.48</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">7820.20</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">7820.90</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-11" datagrid-row-index="11" class="datagrid-row datagrid-row-alt" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">高压保护电源 1D1-3柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">6809.76</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">6809.94</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">6810.12</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">6810.30</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">6810.47</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">6810.65</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">6810.83</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">6811.01</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">6811.19</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">6811.36</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-12" datagrid-row-index="12" class="datagrid-row  " style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">固化炉房AP4电柜 1D2-1柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">0.02</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">0.02</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">0.02</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">0.02</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">0.02</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">0.02</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">0.02</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">0.02</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">0.02</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">0.02</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-13" datagrid-row-index="13" class="datagrid-row datagrid-row-alt" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">固化炉房AP5电柜 1D2-2柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">0.00</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">0.00</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">0.00</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">0.00</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">0.00</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">0.00</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">0.00</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">0.00</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">0.00</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">0.00</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-14" datagrid-row-index="14" class="datagrid-row" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">固化炉房AP6电柜 1D2-3柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">0.00</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">0.00</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">0.00</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">0.00</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">0.00</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">0.00</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">0.00</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">0.00</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">0.00</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">0.00</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-15" datagrid-row-index="15" class="datagrid-row datagrid-row-alt" style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">固化炉房APT电柜 1D1-1柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">1245.07</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">1245.18</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">1245.30</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">1245.42</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">1245.55</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">1245.68</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">1245.82</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">1245.96</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">1246.09</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">1246.22</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-16" datagrid-row-index="16" class="datagrid-row" style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">后固化炉AP11 2D6-2柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">4076.78</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">4077.35</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">4077.93</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">4078.53</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">4079.09</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">4079.62</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">4080.21</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">4080.65</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">4080.97</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">4081.45</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-17" datagrid-row-index="17" class="datagrid-row datagrid-row-alt " style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">空压机总电源 2D5-3柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">5158.60</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">5159.36</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">5160.14</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">5160.91</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">5161.64</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">5162.32</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">5163.08</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">5163.78</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">5164.29</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">5164.92</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-18" datagrid-row-index="18" class="datagrid-row  " style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">冷水机室总电源 2D6-7柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">5187.14</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">5188.15</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">5189.16</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">5190.17</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">5191.18</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">5192.18</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">5193.17</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">5194.18</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">5195.18</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">5196.06</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-19" datagrid-row-index="19" class="datagrid-row datagrid-row-alt " style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">模具清洗间AP2 2D4-3柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">11614.14</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">11615.52</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">11616.90</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">11618.30</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">11619.70</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">11621.08</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">11622.47</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">11623.90</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">11625.29</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">11626.61</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-20" datagrid-row-index="20" class="datagrid-row  " style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">模具清洗间AP3 2D4-2柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">12010.65</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">12012.12</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">12013.67</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">12015.11</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">12016.66</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">12018.19</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">12019.75</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">12021.24</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">12022.62</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">12024.07</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-21" datagrid-row-index="21" class="datagrid-row datagrid-row-alt " style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">新建水站主电源 2D4-1柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产辅助</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">990.57</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">990.69</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">990.81</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">990.93</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">991.05</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">991.17</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">991.29</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">991.41</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">991.53</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">991.65</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-22" datagrid-row-index="22" class="datagrid-row  " style="height: 37px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">旋转加硬AP8、9、10电柜 1D1-2柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">2789.19</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">2789.49</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">2789.75</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">2790.03</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">2790.38</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">2790.72</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">2791.01</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">2791.28</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">2791.53</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">2791.81</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+						<tr id="datagrid-row-r1-2-23" datagrid-row-index="23" class="datagrid-row datagrid-row-alt " style="height: 25px;">
+							<td field="mpName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpName">注塑车间AP1 2D4-4柜</div>
+							</td>
+							<td field="mpTypeName">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-mpTypeName">生产</div>
+							</td>
+							<td field="00时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-00时">12742.28</div>
+							</td>
+							<td field="01时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-01时">12743.53</div>
+							</td>
+							<td field="02时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-02时">12744.74</div>
+							</td>
+							<td field="03时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-03时">12745.98</div>
+							</td>
+							<td field="04时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-04时">12747.21</div>
+							</td>
+							<td field="05时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-05时">12748.44</div>
+							</td>
+							<td field="06时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-06时">12749.67</div>
+							</td>
+							<td field="07时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-07时">12750.88</div>
+							</td>
+							<td field="08时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-08时">12752.10</div>
+							</td>
+							<td field="09时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-09时">12753.30</div>
+							</td>
+							<td field="10时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-10时"></div>
+							</td>
+							<td field="11时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-11时"></div>
+							</td>
+							<td field="12时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-12时"></div>
+							</td>
+							<td field="13时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-13时"></div>
+							</td>
+							<td field="14时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-14时"></div>
+							</td>
+							<td field="15时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-15时"></div>
+							</td>
+							<td field="16时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-16时"></div>
+							</td>
+							<td field="17时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-17时"></div>
+							</td>
+							<td field="18时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-18时"></div>
+							</td>
+							<td field="19时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-19时"></div>
+							</td>
+							<td field="20时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-20时"></div>
+							</td>
+							<td field="21时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-21时"></div>
+							</td>
+							<td field="22时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-22时"></div>
+							</td>
+							<td field="23时">
+								<div style="white-space:normal;height:auto;" class="datagrid-cell datagrid-cell-c1-23时"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="datagrid-footer" style="width: 1602px;">
+				<div class="datagrid-footer-inner" style="display: none;"></div>
+			</div>
+		</table>
+	</body>
+
+</html>

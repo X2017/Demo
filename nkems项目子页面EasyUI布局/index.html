@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Easy UI</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.4/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../jquery-easyui-1.4/themes/icon.css" />
+	<!-- <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"> -->
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+    	#layout{width:100%;}
+		#treeBox{width:15%;overflow-x: hidden;}
+		/*.buttonBox{position: fixed;top:0;height: 28px;}*/
+		/*#content{padding-top: 40px;}*/
+		.panel-body{padding: 0;}
+    </style>
+</head>
+
+<body>
+	<!-- 树列表和内容 开始-->
+	<div id="layout" class="easyui-layout">
+		<!-- 左边树列表 -->
+		<div id="treeBox" data-options=" region:'west',split:true,title:'对象总览' ">
+			<div id="tree"></div>
+		</div>
+		<!-- 右边内容 -->
+		<div id="content" data-options="region:'center'">
+			<!-- 查询按钮 加载公用页面 -->
+			<div id="buttonBox" class="buttonBox"></div>
+			
+		</div>
+	</div>
+	<!-- 树列表和内容 结束-->
+	<script type="text/javascript " src="../jquery-easyui-1.4/jquery.min.js "></script>
+    <script type="text/javascript " src="../jquery-easyui-1.4/jquery.easyui.min.js "></script>
+    <script type="text/javascript " src="...jquery-easyui-1.4/locale/easyui-lang-zh_CN.js "></script>
+    <script type="text/javascript" src="tree.js"></script>
+	<!-- <script src="../bootstrap/bootstrap.min.js"></script> -->
+	<script type="text/javascript">
+		$(function(){
+			$('#buttonBox').panel({
+				href:'button.html'
+			});
+			$('#tree').tree({
+	        	onClick:function (node) {
+	        		console.log(node);
+	        	}
+	        });
+		});
+		function demo() {
+	    	console.log($('#tree').tree('getChecked'));
+	    }
+	</script>
+</body>
+
+</html>

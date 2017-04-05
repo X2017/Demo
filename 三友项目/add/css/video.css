@@ -1,0 +1,8 @@
+@charset 'utf-8';
+#getVideo{
+	width: 642px;
+	height: 522px;
+	display: none;
+	position: relative;
+	border:1px solid silver;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/select2.min.css" />
+    <script type="text/javascript" src="dist/js/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="dist/js/i18n/zh-CN.js"></script>
+</head>
+
+<body>
+    <select class="js-data-example-ajax" style="width: 500px;"></select>
+    <script>
+    $(function() {
+        $(".js-data-example-ajax").select2({
+            multiple:true,
+            ajax: {
+                url: "php.php",
+                dataType: 'json',
+                delay: 250,
+                data: function(params) {
+                    return {
+                        q: params.term,
+                        page: params.page
+                    };
+                },
+                processResults: function(data, params) {
+                    params.page = params.page || 1;
+                    return {
+                        results: data.items,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: true
+            },
+            escapeMarkup: function(markup) {
+                return markup;
+            },
+            minimumInputLength: 1,
+            templateResult: formatRepo, 
+            templateSelection: formatRepoSelection
+        });
+    });
+    function formatRepo(repo) {
+        if (repo.loading) return repo.text;
+        repo.text = repo.name
+        repo.id = repo.code
+        var markup = '<div class="clearfix">' +
+            '<div class="col-sm-4">' + repo.code + '</div>' +
+            '<div class="col-sm-20">' + repo.name + '</div>' +
+            '</div>';
+
+        return markup;
+    }
+    function formatRepoSelection(repo) {
+        repo.selected = true;
+        repo.code = repo.id
+        repo.name = repo.text
+        if (repo.code == null || repo.code == "") {
+            repo.text = '请选择一个停车场'
+            repo.name = repo.text
+        }
+        $("#customer_id").val(repo.name);
+        console.debug(repo);
+        return repo.code;
+    }
+    </script>
+</body>
+
+</html>

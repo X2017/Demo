@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>三菱变压器SVG一次接线图</title>
+		<base target="_blank">
+		<style type="text/css">
+			body {
+				background: #002B59;
+				color: white;
+				border: 2px solid #1bff00;
+			}
+		</style>
+	</head>
+
+	<body>
+		<?xml version="1.0" standalone="no"?>
+		<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+		<svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<g fill="dodgerblue" style="border:1px solid red;">
+				<rect x="10" y="10" width="40" height="40" ry="10" />
+				
+			</g>
+		</svg>
+		<div style="margin-left:200px;">
+			<span>查看更多变压器: </span>
+			<select id="selectSVG" style="width:300px;height:30px;cursor:pointer;border:1px solid blue;margin-bottom:20px;">
+				<option value="MitsubishisSVG01-02-05.svg">#1-#2-#5变压器, 已做ID</option>
+				<option value="MitsubishisSVG03.svg">#3变压器, 已做ID</option>
+				<option value="MitsubishisSVG04.svg">#4变压器, 已做ID</option>
+				<option value="MitsubishisSVG06.svg">#6变压器, 已做ID</option>
+				<option value="MitsubishisSVG07.svg">#7变压器, 已做ID</option>
+				<option value="MitsubishisSVG08.svg">#8变压器, 已做ID</option>
+				<option value="MitsubishisSVG09.svg">#9变压器, 已做ID</option>
+				<option value="MitsubishisSVG10.svg">#10变压器, 已做ID</option>
+				<option value="MitsubishisSVG11.svg">#11变压器, 已做ID</option>
+				<option value="MitsubishisSVG12.svg">#12变压器, 已做ID</option>
+				<option value="MitsubishisSVG13.svg">#13变压器, 已做ID</option>
+				<option value="MitsubishisSVG14.svg">#14变压器, 已做ID</option>
+				<option value="MitsubishisSVG15.svg">#15变压器, 已做ID</option>
+				<option value="MitsubishisSVG16.svg">#16变压器, 已做ID</option>
+			</select>
+		</div>
+		<iframe id="iframeSVG" frameborder="0" style="background:#002B59;width:10000px;height:1500px;" type="image/svg+xml" src="MitsubishisSVG01-02-05.svg"></iframe>
+		<script src="jquery-3.1.1.js"></script>
+		<script>
+			window.onload = function() {
+				var flag = true;
+				$('#iframeSVG').contents().find('#showHide').on('click', function() {
+					if(flag) {
+						flag = false;
+						info('显示用能信息');
+						$('#iframeSVG').contents().find('.showHide').hide();
+					} else {
+						flag = true;
+						info('隐藏用能信息');
+						$('#iframeSVG').contents().find('.showHide').show();
+					}
+				});
+
+				function info(mess) {
+					$('#iframeSVG').contents().find('#showHide').html(mess);
+				}
+				//console.log($('#iframeSVG').contents().find('.showHide'));
+				for(var i = 13; i < 16; i++) {
+					//console.log($('#iframeSVG').contents().find('#g6886').find('text').eq(i).html(i));
+				}
+				var data = "{\"data\":{\"2_55\":{},\"2_60\":{\"eq\":107.2,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.15,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000219,\"pApprent\":2.64,\"ps\":2.64,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219,\"voltpaa\":0,\"voltpab\":0,\"voltpac\":0},\"raw\":326.72},\"2_68\":{\"eq\":106.4,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":300000000004,\"pApprent\":2.656,\"ps\":2.656,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.7,\"voltpaa\":0,\"voltpab\":0,\"voltpac\":0},\"raw\":258.12},\"2_69\":{\"eq\":106.4,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000215,\"pApprent\":2.648,\"ps\":2.648,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.4,\"voltpaa\":0,\"voltpab\":0,\"voltpac\":0},\"raw\":326.75},\"2_70\":{\"eq\":107.2,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000194,\"pApprent\":2.64,\"ps\":2.64,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.2,\"voltpaa\":0,\"voltpab\":263.9,\"voltpac\":144.3},\"raw\":525.42},\"2_71\":{\"eq\":106.4,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":300000000005,\"pApprent\":2.648,\"ps\":2.648,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.2,\"voltpaa\":0,\"voltpab\":0,\"voltpac\":0},\"raw\":260.05},\"2_72\":{},\"2_74\":{\"eq\":104.8,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.148,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000103,\"pApprent\":2.584,\"ps\":2.584,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":218,\"voltpaa\":0,\"voltpab\":261.5,\"voltpac\":141.7},\"raw\":540.83},\"2_75\":{\"eq\":0,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":-1,\"factorsa\":1,\"factorsb\":1,\"factorsc\":-1,\"mpId\":100000000193,\"pApprent\":2.648,\"ps\":-2.648,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.4,\"voltpaa\":0,\"voltpab\":262,\"voltpac\":142.3},\"raw\":192.54},\"2_76\":{\"eq\":107.2,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.15,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000199,\"pApprent\":2.64,\"ps\":2.64,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219,\"voltpaa\":0,\"voltpab\":262,\"voltpac\":142.3},\"raw\":318.78},\"2_77\":{\"eq\":108,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000217,\"pApprent\":2.656,\"ps\":2.656,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.8,\"voltpaa\":0,\"voltpab\":261.8,\"voltpac\":142.1},\"raw\":311.7},\"2_80\":{\"eq\":107.2,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000214,\"pApprent\":2.656,\"ps\":2.656,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.7,\"voltpaa\":0,\"voltpab\":261.7,\"voltpac\":142.1},\"raw\":312.11},\"2_81\":{\"eq\":107.2,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000123,\"pApprent\":2.648,\"ps\":2.648,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.3,\"voltpaa\":0,\"voltpab\":262.3,\"voltpac\":142.6},\"raw\":312.48},\"2_82\":{\"eq\":107.2,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000198,\"pApprent\":2.656,\"ps\":2.656,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.6,\"voltpaa\":0,\"voltpab\":262.3,\"voltpac\":142.6},\"raw\":312.75},\"2_83\":{\"eq\":108,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":100000000200,\"pApprent\":2.656,\"ps\":2.656,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.6,\"voltpaa\":0,\"voltpab\":260.4,\"voltpac\":140.6},\"raw\":312.9},\"2_88\":{},\"2_89\":{},\"2_90\":{},\"2_91\":{\"eq\":106.4,\"load\":{\"ctpt\":80,\"curra\":0,\"currb\":0,\"currc\":0.151,\"factors\":0.999,\"factorsa\":1,\"factorsb\":1,\"factorsc\":0.999,\"mpId\":300000000006,\"pApprent\":2.648,\"ps\":2.648,\"qs\":0,\"rate\":49.95,\"volta\":0,\"voltb\":0,\"voltc\":219.4,\"voltpaa\":0,\"voltpab\":0,\"voltpac\":0},\"raw\":258.16}},\"error\":{},\"explain\":\"data:为所有计量点的统计数据；error:为报错信息；eq:当日用电量；raw:当前表码值；load：为负荷数据，包括三相电压(volt*)电流(curr*)，有功(ps)、无功(qs)功率,视在功率(pApprent)，总功率因数(factors)，三相功率因数（factors*），频率（rate）,综合倍率（ctpt）,三相相角(voltpa*)\"}";
+				var obj = $.parseJSON(data);
+				for(var i in obj.data) {
+					if(obj.data[i].load != undefined) {
+						//console.log(i.substring(2,4));
+						for(var j = 3; j <= 8; j++) {
+							// $('#iframeSVG').contents().find('#'+i.substring(2,4)+'').find('text').eq(j).html('2016测试');
+						}
+						//$('#iframeSVG').contents().find('#'+i+'').find('text').eq(9).html(obj.data[i].raw);
+					}
+				}
+				$('#selectSVG').on('change', function() {
+					$('#iframeSVG').attr('src', this.value);
+					var iframe = $('#iframeSVG').get(0);
+					if(! /*@cc_on!@*/ 0) { //if not IE
+						iframe.onload = function() {
+							/*
+							setTimeout(function() {
+							    console.log($('#iframeSVG').contents().find('#3').find('text').eq(0).html('测试'));
+							}, 500);*/
+						};
+					} else {
+						iframe.onreadystatechange = function() {
+							if(iframe.readyState == "complete") {
+								// alert("Local iframe is now loaded.");
+							}
+						};
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

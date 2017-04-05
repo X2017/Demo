@@ -1,0 +1,12 @@
+#mainRight .wenhua h3,#mainRight .jianjie h3{
+	color: #E53333;
+	margin-top: 20px;
+}#mainRight .jianjie h4{
+	text-indent: 2em;
+}#mainRight .wenhua p,#mainRight .jianjie p{
+	text-indent: 2em;
+	line-height: 1.6;
+	margin: 4px 0;
+	color: #232323;
+	font-size: 16px;
+}

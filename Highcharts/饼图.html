@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Pie</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+		<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+	</head>
+
+	<body>
+		<div id="container" style="width: 100%;height: 500px;"></div>
+		<script>
+			//			$(function() {
+			//				Highcharts.setOptions({
+			//					lang: {　
+			//						printChart: "打印图表",
+			//						downloadJPEG: "下载 JPEG 图片",
+			//						downloadPDF: "下载 PDF 文档",
+			//						downloadPNG: "下载 PNG 图片",
+			//						downloadSVG: "下载 SVG 矢量图",
+			//					}
+			//				});
+			//				$('#container').highcharts({
+			//					chart: {
+			//						plotBackgroundColor: null,
+			//						plotBorderWidth: null,
+			//						plotShadow: false
+			//					},
+			//					title: {
+			//						text: '测试'
+			//					},
+			//					tooltip: {
+			//						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			//					},
+			//					
+			//					plotOptions: {
+			//						pie: {
+			//							allowPointSelect: true,
+			//							cursor: 'pointer',
+			//							showInLegend: true,
+			//							dataLabels: {
+			//								enabled: true,
+			//								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+			//								style: {
+			//									color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+			//								}
+			//							}
+			//						}
+			//					},
+			//					series: [{
+			//						type: 'pie',
+			//						name: '百分比',
+			//						data: [
+			//							["a",100],
+			//							["b",200],
+			//							["c",300]
+			//						]
+			//					},{
+			//						type: 'pie',
+			//						name: '百分比',
+			//						center:["20%"],
+			//						data: [
+			//							["c",100],
+			//							["b",200],
+			//							["a",300]
+			//						]
+			//					},{
+			//						type: 'pie',
+			//						name: '百分比',
+			//						center:["80%"],
+			//						data: [
+			//							["c",100],
+			//							["b",200],
+			//							["a",300]
+			//						]
+			//					}],
+			//				});
+			//			});
+			$(function() {
+				$('#container').highcharts({
+					chart: {
+						plotBackgroundColor: null,
+						plotBorderWidth: 1, //null,
+						plotShadow: false,
+					},
+					title: {
+						text: 'Browser market shares at a specific website, 2014'
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer'
+						}
+					},
+					series: [{
+							type: 'pie',
+							name: 'Browser share',
+							center: [150, null],
+							size: 300,
+							dataLabels: {
+								enabled: false
+							},
+							showInLegend: true,
+							data: [
+								['Firefox', 45.0],
+								['IE', 26.8],
+								{
+									name: 'Chrome',
+									y: 12.8,
+									sliced: true,
+									selected: true
+								},
+								['Safari', 8.5],
+								['Opera', 6.2],
+								['Others', 0.7]
+							]
+						},
+						{
+							type: 'pie',
+							name: 'Browser share',
+							center: [500, null],
+							size: 300,
+							dataLabels: {
+								enabled: false
+							},
+							showInLegend: true,
+							data: [
+								['Firefox', 45.0],
+								['IE', 26.8],
+								{
+									name: 'Chrome',
+									y: 12.8,
+									sliced: true,
+									selected: true
+								},
+								['Safari', 8.5],
+								['Opera', 6.2],
+								['Others', 0.7]
+							]
+						},
+						{
+							type: 'pie',
+							name: 'Browser share',
+							center: [900, null],
+							size: 300,
+							dataLabels: {
+								enabled: false
+							},
+							showInLegend: true,
+							data: [
+								['Firefox', 45.0],
+								['IE', 26.8],
+								{
+									name: 'Chrome',
+									y: 12.8,
+									sliced: true,
+									selected: true
+								},
+								['Safari', 8.5],
+								['Opera', 6.2],
+								['Others', 0.7]
+							]
+						}
+					]
+				});
+			});
+		</script>
+	</body>
+
+</html>

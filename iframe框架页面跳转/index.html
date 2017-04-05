@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style type="text/css">
+	    #selectSVG {
+	        width: 250px;
+	        height: 30px;
+	        cursor: pointer;
+	        font-size: 15px;
+	    }
+	    #iframeSVG {
+	        background: black;
+	        width:4500px;
+	        height: 1500px;
+	    }
+    </style>
+</head>
+
+<body>
+    <p>
+        <select id="selectSVG">
+            <!--
+				<option value="../MitsubishisSVG/MitsubishisTransformer01-02-05.svg">MitsubishisTransformer01-02-05.svg</option>
+            <option value="../MitsubishisSVG/MitsubishisTransformer03.svg">MitsubishisTransformer03.svg</option>
+            <option value="../MitsubishisSVG/MitsubishisTransformer04.svg">MitsubishisTransformer04.svg</option>
+            <option value="../MitsubishisSVG/MitsubishisTransformer08.svg">MitsubishisTransformer08.svg</option>
+            <option value="../MitsubishisSVG/MitsubishisTransformer09.svg">MitsubishisTransformer09.svg</option>
+            -->
+            <option value="1.html">1</option>
+            <option value="2.html">2</option>
+            <option value="3.html">3</option>
+        </select>
+    </p>
+    <iframe id="iframeSVG" type="image/svg+xml" src="1.html"  frameborder="0"></iframe>
+    <script type="text/javascript" src="jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+	    $(function() {
+	        $('#selectSVG').on('change',function () {
+	         	$('#iframeSVG').attr('src',this.value);
+	        });
+	        // $('#iframeSVG').contents().find('#tspan4369').css('cursor', 'pointer').mouseover(function() {
+	        //     console.log($(this).text());
+	        // }).mouseout(function() {
+	        //     console.log($(this).text());
+	        // });
+	        // var timer=setInterval(randomNumber,1000);
+	    });
+	 /*   window.onload=function () {
+	       	console.log();
+	    }
+	    function demo(){
+	    	window.parent.returnId();
+	    }*/
+	 //    function randomNumber() {
+		// 	$('#iframeSVG').contents().find('#tspan4369').text(Math.floor(Math.random()*1000+1));
+		// }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!--
+	作者：765596409@qq.com
+	时间：2017-03-14
+	描述：
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>管理员首页</title>
+		<link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+		<style type="text/css">
+			.userTitle,
+			#header {
+				background-color: #3774C1;
+				color: white;
+			}
+			
+			#header {
+				margin: 0 5px;
+			}
+			
+			#header strong,
+			#header strong+span {
+				color: #EBE12D;
+			}
+			
+			.title {
+				padding-bottom: 5px;
+				border-bottom: 1px solid #1FB5AD;
+			}
+			
+			.grid {
+				background: #C7E2FF;
+			}
+			
+			#main .userTitle {
+				margin-bottom: 0;
+				padding: 5px 0;
+				text-align: center;
+			}
+			
+			.clearfix:after {
+				content: ".";
+				height: 0;
+				visibility: hidden;
+				display: block;
+				clear: both;
+			}
+			
+			.gridLeft {
+				border-right: 2px solid #3774C1;
+			}
+			
+			.gridRight {
+				padding-left: 10px;
+			}
+			
+			.gridLeft,
+			.gridRight {
+				border-bottom: 2px solid #3774C1;
+				margin-bottom: 5px;
+			}
+			
+			.grid p {
+				font-size: 15px;
+				text-indent: 25px;
+			}
+			
+			.grid strong,
+			.grid strong+span {
+				color: #f75252;
+			}
+			
+			@media (min-width: 700px) and (max-width: 1200px) {
+				.grid h4 {
+					font-size: 15px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="thumbnail">
+			<h4 class="title">企业汇总统计</h4>
+			<div class="carousel-inner">
+				<div id="header">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<h3>接入企业数量: <strong class=""> 0 </strong><span>家</span></h3>
+						<h3>未运行: <strong class=""> 0 </strong><span>个</span></h3>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<h3>监测点数量: <strong class=""> 0 </strong><span>个</span></h3>
+						<h3>当月能耐总计: <strong class=""> 0 </strong><span>kWh</span></h3>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<h3>正常运行总计: <strong class=""> 0 </strong><span>个</span></h3>
+						<h3>上月能耗总计: <strong class=""> 0 </strong><span>kWh</span></h3>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div id="main" class="carousel-inner">
+
+			</div>
+		</div>
+		<!--企业模版-->
+		<script id="compiled" type="text/template">
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<h3 class="userTitle"><%=title%></h3>
+				<div class="grid">
+					<div class="gridLeft col-md-5 col-sm-5 col-xs-5">
+						<h4>
+						监测点数量：<strong> <%=one%> </strong><span>个</span>
+					</h4>
+						<h4>
+						正常运行：<strong> <%=two%> </strong><span>个</span>
+					</h4>
+						<h4>
+						未运行：<strong> <%=three%> </strong><span>个</span>
+					</h4>
+					</div>
+					<div class="gridRight col-md-7 col-sm-7 col-xs-7">
+						<h4>
+						当月总能耗：<strong> <%=four%> </strong><span>个</span>
+					</h4>
+						<h4>
+						上月总能耗：<strong> <%=five%> </strong><span>个</span>
+					</h4>
+						<h4>
+						上月平均负荷率：<strong> <%=six%> </strong><span>个</span>
+					</h4>
+					</div>
+					<p>
+						<%=article%>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/underscore-min.js"></script>
+		<script>
+			var data = [{
+				"title": "广州丰田汽车有限公司",
+				"one": "1",
+				"two": "1",
+				"three": "0",
+				"four": "0",
+				"five": "0",
+				"six": "8.88",
+				"article": "告警数据",
+			}, {
+				"title": "卡尔蔡司公学(中国)有限公司",
+				"one": "1",
+				"two": "1",
+				"three": "0",
+				"four": "0",
+				"five": "0",
+				"six": "8.88",
+				"article": "告警数据",
+			}, {
+				"title": "广州红十字公医院",
+				"one": "1",
+				"two": "1",
+				"three": "0",
+				"four": "0",
+				"five": "0",
+				"six": "8.88",
+				"article": "告警数据",
+			}, {
+				"title": "屈臣氏(广州)",
+				"one": "1",
+				"two": "1",
+				"three": "0",
+				"four": "0",
+				"five": "0",
+				"six": "8.88",
+				"article": "告警数据",
+			}, {
+				"title": "科腾-五洲科技有限公司",
+				"one": "1",
+				"two": "1",
+				"three": "0",
+				"four": "0",
+				"five": "0",
+				"six": "8.88",
+				"article": "告警数据",
+			}, {
+				"title": "广州群英橡槊有限公司",
+				"one": "1",
+				"two": "1",
+				"three": "0",
+				"four": "0",
+				"five": "0",
+				"six": "8.88",
+				"article": "告警数据",
+			}];
+			var template = $("#compiled").html();
+			var compiled = _.template(template);
+			for(var i = 0; i < data.length; i++) {
+				var compiledStr = compiled(data[i]);
+				$("#main").append($.parseHTML(compiledStr));
+			}
+		</script>
+	</body>
+
+</html>
+
+
+

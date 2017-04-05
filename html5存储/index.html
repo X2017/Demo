@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>localStorage</title>
+	</head>
+
+	<body>
+		<script>
+			var loca = {
+				//
+				set: function(name, value) {
+					if(!!window.sessionStorage) {
+						localStorage.setItem(name, value);
+					}
+				},
+				get: function(name) {
+					if(!!window.sessionStorage) {
+						return localStorage.getItem((name));
+					}
+				},
+			}
+			loca.set("test",2017);
+			alert(loca.get("test"));
+		</script>
+	</body>
+
+</html>

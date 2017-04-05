@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>进度节能量目标完成情况表</title>
+    <link rel="stylesheet" type="text/css" href="css/all_table.css">
+    <style type="text/css">
+        .header_bg td:nth-child(odd){background: #4CAFDE;}
+        .header_bg td:nth-child(even){background: #78C53E;}
+        /*单*/
+        .bg_1 td:nth-child(odd){background:#DAEEFA;}
+        /*双*/
+        .bg_1 td:nth-child(even){background:#E2EFD6;}
+        .bg_2 td:nth-child(odd){background:#B6DCF4;}
+        .bg_2 td:nth-child(even){background:#C9E1AB;}
+        input{background: none;}
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <table id="table" align="center" cellspacing="0" cellpadding="10" height="100">
+            <tr>
+                <td style="background: #C9CAC9;font-size: 16px;" colSpan="8"><strong>进度节能量目标完成情况表</strong></td>
+            </tr>
+            <tr class="header_bg">
+                <td>项目</td>
+                <td>计量单位</td>
+                <td>代码</td>
+                <td>2011年</td>
+                <td>2011年至2012年</td>
+                <td>2011年至2013年</td>
+                <td>2011年至2014年</td>
+                <td>2011年至2015年</td>
+            </tr>
+            <tr class="bg_1">
+                <td>甲</td>
+                <td>乙</td>
+                <td>丙</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+                
+             <tr class="bg_2">
+                <td>进度节能量目标</td>
+                <td>吨标准煤</td>
+                <td>01</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td>单位产品综合能耗实际完成进度节能量</td>
+                <td>吨标准煤</td>
+                <td>02</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+                
+             <tr class="bg_2">
+                <td>产值综合能耗实际完成进度节能量</td>
+                <td>吨标准煤</td>
+                <td>03</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td>单位产品综合能耗进度节能量目标完成率</td>
+                <td>%</td>
+                <td>04</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+             <tr class="bg_2">
+                <td>产值综合能耗进度节能量目标完成率</td>
+                <td>%</td>
+                <td>05</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr align="center">
+                <td  colspan="3"  style="background: #C9CAC9;">进度节能量目标完成情况说明</td>
+                <td colspan="5"  style="background: #C9CAC9;"></td>
+            </tr>
+         </table>
+    </form>
+    <button type="submit" id="button" name="button">获取值</button>
+    <!-- JQ -->
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <!-- 方法 -->
+    <script type="text/javascript" src="js/all_table.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 生成输入框和存储本地数据
+            obj.create_input();
+            //var data = [];//行位置 列位置 所占行数 所占列数:数据
+            $('#button').click(function() {
+                // 返回的位置和值
+                document.write(obj.get_posi_value());
+            });
+        });
+    </script>
+</body>
+</html>

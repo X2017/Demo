@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<!--<iframe id="iframeSVG" src="MitsubishisSVG03.svg" style="width: 9000px;height: 2000px;"></iframe>-->
+		<input type="text" id="test" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			window.onload = function() {
+				$("#test").val("asd");
+				var a = { "s" : 1};
+				console.log($.isEmptyObject(a)); 
+				console.log($('#iframeSVG').contents().find("#1-").find("path").eq(1).css("opacity", "0"));
+				/*$('#iframeSVG').contents().find("#47").find("text").eq(0).text(2016);
+				$('#iframeSVG').contents().find("#47").find("text").eq(1).text(11);
+				$('#iframeSVG').contents().find("#47").find("text").eq(2).text(22);
+				$('#iframeSVG').contents().find("#47").find("text").eq(3).text(33);
+				$('#iframeSVG').contents().find("#47").find("text").eq(4).text(44);
+				$('#iframeSVG').contents().find("#47").find("text").eq(5).text(55);
+				$('#iframeSVG').contents().find("#47").find("text").eq(6).text(66);
+				$('#iframeSVG').contents().find("#47").find("text").eq(7).text(77);
+				$('#iframeSVG').contents().find("#47").find("text").eq(8).text(88);
+				$('#iframeSVG').contents().find("#47").find("text").eq(9).text(99);
+				$('#iframeSVG').contents().find("#47").find("text").eq(10).text(10);
+				$('#iframeSVG').contents().find("#47").find("text").eq(11).text(11).css("opacity",1).css("fill","red");
+				$('#iframeSVG').contents().find("#47").find("text").eq(12).text(12).css("opacity",1).css("fill","red");
+				$('#iframeSVG').contents().find("#47").find("text").eq(13).text(13).css("opacity",1).css("fill","red");
+				
+				
+				$('#iframeSVG').contents().find("#51").find("text").eq(0).text(2016);
+				$('#iframeSVG').contents().find("#51").find("text").eq(1).text(11);
+				$('#iframeSVG').contents().find("#51").find("text").eq(2).text(22);
+				$('#iframeSVG').contents().find("#51").find("text").eq(3).text(33);
+				$('#iframeSVG').contents().find("#51").find("text").eq(4).text(44);
+				$('#iframeSVG').contents().find("#51").find("text").eq(5).text(55);
+				$('#iframeSVG').contents().find("#51").find("text").eq(6).text(66);
+				$('#iframeSVG').contents().find("#51").find("text").eq(7).text(77);
+				$('#iframeSVG').contents().find("#51").find("text").eq(8).text(88);
+				$('#iframeSVG').contents().find("#51").find("text").eq(9).text(99);
+				$('#iframeSVG').contents().find("#51").find("text").eq(10).text(10);
+				$('#iframeSVG').contents().find("#51").find("text").eq(11).text(11).css("opacity",1).css("fill","red");
+				$('#iframeSVG').contents().find("#51").find("text").eq(12).text(12).css("opacity",1).css("fill","red");
+				$('#iframeSVG').contents().find("#51").find("text").eq(13).text(13).css("opacity",1).css("fill","red");
+
+				*/
+
+				//$('#iframeSVG').contents().find("#51").find("text").eq(0).text(2016);
+				//console.log($('#iframeSVG').contents().find("#1").find("path").eq(8).hide());
+				//console.log($('#iframeSVG').contents().find("#1"));
+			}
+		</script>
+	</body>
+
+</html>

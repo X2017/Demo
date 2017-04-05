@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>鱼骨图</title>
+	<style type="text/css">
+		*{margin:0;padding:0}
+		body{background:#5493DE;color:#fff;overflow-x:hidden}
+		.container{margin:200px 200px 0 150px;position: re}
+		.fishBone ul{overflow:visible!important}
+		.fishBone ul,li{list-style:none;line-height:2em}
+		.fishBone{width:100%;height:100%;white-space:nowrap;position:relative}
+		.fishBone .wrapper{padding:0 10px;margin:auto;overflow:hidden}
+		.fishBone .wrapper .bd{overflow:hidden}
+		.fishBone .item{position:relative;width:130px;height:350px;display:inline-block;margin-left:40px}
+		.fishBone .item .first{line-height:2em}
+		.fishBone .item .title{border-left:none}
+		.fishBone .item.bottom .title{bottom:0}
+		.fishBone .item .content{height:250px;display:block;position:relative;left:0;position:absolute;border-left:15px solid #FF9B61}
+		.fishBone .item.top .content{padding-bottom:13px}
+		.fishBone .item.bottom .content{bottom:7px;padding-top:10px;padding-bottom:5px}
+		.fishBone .item .content ul li{padding-left:13px}
+		.fishBone .item .content ul li.line-last{border-left:none}
+		.next,.prev{cursor:pointer;opacity:.1;position:absolute;z-index:9999999;display:inline-block}
+		.next,.triangle-right{width:0;height:0;border-top:100px solid transparent;border-left:200px solid #FF9B61;border-bottom:100px solid transparent;position:absolute;right:0}
+		.prev,.triangle-left{width:0;height:0;cursor:pointer;border-top:75px solid transparent;border-right:150px solid #FF9B61;border-bottom:75px solid transparent}
+		.fishBone .prev{top:95px;left:-150px}
+		.fishBone .next{top:75px;right:-199px}
+		.fishBone .line{position:absolute;top:117px;height:1px;width:100%;border-bottom:100px solid #ff9b61;z-index:-1}
+		.fishBone .item .line-point{position:absolute;left:4px;bottom:-4px;display:block;height:18px;width:18px;background:url(img/line-point.png) no-repeat 0 0}
+		.fishBone .item.bottom .line-point{top:-6px}
+		#info{position:absolute;z-index:9999;width:100%}
+		#info div{margin:0 30px}
+		#leftInfo{float:left}
+		#rightInfo{float:right}
+		.top .content{transform:rotate(45deg);border-top-left-radius:25px}
+		.top .content li{position:relative;bottom:10px;transform:rotate(-45deg)}
+		.bottom .content{transform:rotate(-45deg);border-bottom-left-radius:25px}
+		.bottom .content li{position:relative;top:150px;transform:rotate(45deg)}
+		.container .first{display:inline-block}
+		.firstData{z-index:999999;text-indent:80px;font-size:16px;position:relative;bottom:15px;top:20px;left:-80px}
+		.triangle-left{position:absolute;top: 293px;left: 0;}
+		.triangle-right{position:absolute;top: 270px;right: 0;}
+		.triangle-right ul li{width:100px;height:20px;z-index:9999999}
+		.firstData{position:absolute;top:320px;left:0}
+		.lastData{position:absolute;top:320px;right:200px;}
+	</style>
+</head>
+
+<body>
+	
+	<div class="container">
+		<div class="triangle-left"></div>
+		<div class="triangle-right"></div>
+		<div class="fishBone"></div>
+		<ul class="firstData">
+			<li>asdasd</li>
+			<li>asdasd</li>
+			<li>asdasd</li>
+		</ul>
+		<ul class="lastData">
+			<li>asdasd</li>
+			<li>asdasd</li>
+			<li>asdasd</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="js/fishBone.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script> -->
+	<script type="text/javascript">
+		$(function () {
+			var data = [
+					{'test_1':'1','test_2':'test','test_3':'test'},
+					{'test_1':'2','test_2':'test','test_3':'test'},
+					{'test_1':'3','test_2':'test','test_3':'test'},
+					{'test_1':'4','test_2':'test','test_3':'test'},
+					{'test_1':'5','test_2':'test','test_3':'test'},
+					{'test_1':'6','test_2':'test','test_3':'test'},
+					{'test_1':'7','test_2':'test','test_3':'test'},
+					{'test_1':'7','test_2':'test','test_3':'test'},
+					{'test_1':'7','test_2':'test','test_3':'test'},
+					{'test_1':'7','test_2':'test','test_3':'test'},
+					{'test_1':'7','test_2':'test','test_3':'test'},
+					
+				];
+			$(".fishBone").fishBone(data);//创建案件历史
+		});
+	</script>
+</div>
+</body>
+</html>

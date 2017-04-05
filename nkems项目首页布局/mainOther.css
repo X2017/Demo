@@ -1,0 +1,14 @@
+@charset 'utf-8';
+.icon{text-indent:30px;border-bottom:1px solid #1FB5AD;padding-bottom:3px;background:url(icon.png) no-repeat}
+.yearMess{margin:10px 0;height:100px;background:#00f}
+.icon1{background-position:0 -182px}
+.icon2{background-position:0 -150px}
+.icon3{background-position:0 -3px}
+.infoBg{background:#C5EFFF;width:100%;margin-bottom:8px;border:5px solid #3BAEDA;border-top-width:0;border-right-width:0;border-bottom-width:0;border-radius:3px;padding-top:10%;padding-left:2%}
+.infoBg2{background:#FFDDD7}
+.infoBg3{background:#FFE9BA}
+.infoBg4{background:#DFFFBC}
+.radius{background:silver;width:40%;height:80%;border-radius:80%;background:#3BAEDA}
+.radius2{background:#D9513B}
+.radius3{background:#F6BB43}
+.radius4{background:#8CC252}

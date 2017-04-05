@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>基本情况表</title>
+    <link rel="stylesheet" href="easyui.css" />
+    <link rel="stylesheet" href="icon.css" />
+    <link rel="stylesheet" type="text/css" href="css/all_table.css">
+    <link rel="stylesheet" href="css/smoothness/jquery.ui.css" />
+    <style type="text/css">
+        #table td{min-widtd: 120px;}
+        #chanzhi{position: relative;}
+        #changzhishuoming{position: absolute;top: 0;left: 0;widtd: 100%;height: 100%;resize: none;border:0 none;padding: 5px;}
+        #changzhishuoming:focus{border:2px solid #4BB9F8;}
+        .header_bg,.left_bg,.left_bg_2{font-size:15px;font-weight: bold;color: #e6e6e6;}
+        .header_bg{background: #4AB694;}
+        .left_bg{background: #35A6AC;}
+        .left_bg_2{background: #32BDC4;}
+        form input{background:#BDFCD4;}
+        form input:focus{background:#99C8EC;}
+    </style>
+</head>
+<body>
+    <form id="form">
+        <table id="table" align="center" cellspacing="0" cellpadding="10">
+            <tr>
+                <td style="background: #383938;color: white;font-size: 16px;" colSpan="9"><strong>基本情况表</strong></td>
+            </tr>
+            <tr>
+                <td class="header_bg">所属地区<strong class="required">*</strong></td>
+                <td><input type="text" id="diqu" name="diqu" /></td>
+                <td  class="header_bg">所属领域<strong class="required">*</strong></td>
+                <td><input type="text" id="lingyu" name="lingyu" /></td>
+                <td  class="header_bg" colspan="2">所属行业<strong class="required">*</strong></td>
+                <td><input type="text" id="hangye" name="hangye" /></td>
+                <td class="header_bg">单位类型<strong class="required">*</strong></td>
+                <td><input type="text" id="leixing" name="leixing" /></td>
+            </tr>
+            <tr>
+                <td class="left_bg">单位详细名称</td>
+                <td colspan="3"><input type="text" id="mingcheng" name="mingcheng" /></td>
+                <td class="left_bg" colspan="2">法人单位代码</td>
+                <td colspan="4"><input type="text" id="daima" name="daima" /></td>
+            </tr>
+            <tr>
+                <td class="left_bg" >单位注册日期</td>
+                <td colspan="3"><input type="text" id="riqi" name="riqi" readonly="readonly" /></td>
+                <td class="left_bg" colspan="2">单位注册资本（万元）</td>
+                <td colspan="4"><input type="text" id="ziben" name="ziben" /></td>
+                
+            </tr>
+            <tr>
+                <td class="left_bg">法定代表人姓名</td>
+                <td colspan="3"><input type="xingming" name="xingming" /></td>
+                <td class="left_bg" colspan="2">联系电话（区号）</td>
+                <td colspan="4"><input type="text" id="fadingdianhua" name="fadingdianhua" /></td>
+            </tr>
+             <tr>
+                <td class="left_bg">是否央企</td>
+                <td colspan="3" style="background:#BDFCD4;">
+                    <!-- <input type="text" id="yangqi" name="yangqi"/> -->
+                    <label for="yes" style="display:inline-block;width: 50px;"><input style="width: 20px;" type="radio" id="yes" name="yangqi" value="是" />是</label>
+                    <label for="no" id="no" style="display:inline-block;width: 50px;"><input style="width: 20px;" type="radio" id="no" name="yangqi" value="否" />否</label>
+                </td>
+                <td class="left_bg" colspan="2">所属央企集团名称</td>
+                <td colspan="4"><input type="text" id="qituanmingcheng" name="qituanmingcheng" /></td>
+                
+            </tr>
+            <tr>
+                <td class="left_bg">单位地址</td>
+                <td colspan="3"><input type="text" id="danweidizhi" name="danweidizhi" /></td>
+                <td  class="left_bg"colspan="2">邮政编码</td>
+                <td colspan="4"><input type="text" id="youzheng" name="youzheng" /></td>
+                
+            </tr>
+            <tr>
+                <td class="left_bg">行政区划代码</td>
+                <td colspan="3"><input type="text" id="quhuadaima" name="quhuadaima" /></td>
+                <td class="left_bg" colspan="2">电子邮箱</td>
+                <td colspan="4"><input type="text" id="youxiang" name="youxiang" /></td>
+                
+            </tr>
+             <tr>
+                <td class="left_bg">能源管理机构名称</td>
+                <td colspan="3"><input type="text" id="jigoumingchegn" name="jigoumingchegn" /></td>
+                <td class="left_bg" colspan="2">传真（区号）</td>
+                <td colspan="4"><input type="text" id="quhao" name="quhao" /></td>
+            </tr>
+            <tr>
+                <td class="left_bg">主管节能领导姓名</td>
+                <td colspan="3"><input type="text" id="lingdaoxingming" name="lingdaoxingming" /></td>
+                <td class="left_bg" colspan="2">联系电话（区号）</td>
+                <td colspan="4"><input type="text" id="lingdaodianhua" name="lingdaodianhua" /></td>
+            </tr>
+            <tr>
+                <td class="left_bg">能源管理负责人姓名<strong class="required">*</strong></td>
+                <td><input type="text" id="nengyuanfuzeren" name="nengyuanfuzeren" /></td>
+                <td class="left_bg">手机<strong class="required">*</strong></td>
+                <td><input type="text" id="nengyuanshouji" name="nengyuanshouji" /></td>
+                <td  class="left_bg"colspan="2">能源管理师证号</td>
+                <td colspan="4"><input type="text" id="nengyuanzhenghao" name="nengyuanzhenghao" /></td>
+             </tr>   
+             <tr>
+                <td class="left_bg">是否通过能源管理体系认证<strong class="required">*</strong></td>
+                <td style="background:#BDFCD4;">
+                    <label for="tixiyes" style="display:inline-block;width: 50px;"><input style="width: 20px;" type="radio" id="tixiyes" name="tixi" value="是" />是</label>
+                    <label for="tixino" id="no" style="display:inline-block;width: 50px;"><input style="width: 20px;" type="radio" id="tixino" name="tixi" value="否" />否</label>
+                </td>
+                <td class="left_bg">通过日期<strong class="required">*</strong></td>
+                <td style="background:#BDFCD4;"><input type="text" id="tongguoriqi" name="tongguoriqi" /></td>
+                <td  class="left_bg" colspan="2">认证机构</td>
+                <td style="background:#BDFCD4;" colspan="4"><input type="text" id="renzhengjigou" name="renzhengjigou" /></td>
+             </tr> 
+             <tr>
+                <td class="left_bg" colspan="2">指标名称</td>
+                <td class="left_bg">计量单位</td>
+                <td class="left_bg">本期值</td>
+                <td  class="left_bg"colspan="2">上年值</td>
+                <td class="left_bg" colspan="2">同比变化率（%）</td>
+                <td  class="left_bg"colspan="2">产值及能源消费变化情况说明</td>
+             </tr>  
+              <tr>
+                <td class="left_bg_2" colspan="2">工业总产值（可比价）</td>
+                <td class="left_bg_2">万元</td>
+                <td><input type="text" id="benqi_1" name="benqi_1" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_1" name="shangnianzhi_1" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_1" name="tongbilv_1" /></td>
+                <td style="background: #BDFCD4"colspan="2" rowspan="10" id="chanzhi"><textarea style="background: #BDFCD4" name="changzhishuoming" id="changzhishuoming"></textarea></td>
+             </tr> 
+              <tr>
+                <td  class="left_bg_2"colspan="2">销售收入</td>
+                <td class="left_bg_2">万元</td>
+                <td><input type="text" id="benqi_2" name="benqi_2" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_2" name="shangnianzhi_2" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_2" name="tongbilv_2" /></td>
+             </tr> 
+              <tr>
+                <td  class="left_bg_2"colspan="2">上缴利税</td>
+                <td class="left_bg_2">万元</td>
+                <td><input type="text" id="benqi_3" name="benqi_3" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_3" name="shangnianzhi_3" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_3" name="tongbilv_3" /></td>
+             </tr> 
+              <tr>
+                <td class="left_bg_2" colspan="2">从业人员</td>
+                <td class="left_bg_2">人</td>
+                <td><input type="text" id="benqi_4" name="benqi_4" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_4" name="shangnianzhi_4" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_4" name="tongbilv_4" /></td>
+             </tr> 
+              <tr>
+                <td class="left_bg_2" colspan="2">能源管理师人数</td>
+                <td class="left_bg_2">人</td>
+                <td><input type="text" id="benqi_5" name="benqi_5" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_5" name="shangnianzhi_5" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_5" name="tongbilv_5" /></td>
+             </tr> 
+              <tr>
+                <td  class="left_bg_2"colspan="2">综合能源消费量（当量值）</td>
+                <td class="left_bg_2">万吨标准煤</td>
+                <td><input type="text" id="benqi_6" name="benqi_6" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_6" name="shangnianzhi_6" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_6" name="tongbilv_6" /></td>
+             </tr> 
+              <tr>
+                <td class="left_bg_2" colspan="2">生产成本</td>
+                <td class="left_bg_2">万元</td>
+                <td><input type="text" id="benqi_7" name="benqi_7" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_7" name="shangnianzhi_7" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_7" name="tongbilv_7" /></td>
+             </tr> 
+              <tr>
+                <td class="left_bg_2" colspan="2">能源消费成本</td>
+                <td class="left_bg_2">万元</td>
+                <td><input type="text" id="benqi_8" name="benqi_8" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_8" name="shangnianzhi_8" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_9" name="tongbilv_9" /></td>
+             </tr> 
+              <tr>
+                <td class="left_bg_2" colspan="2">能源消费占生产成本比例</td>
+                <td class="left_bg_2">%</td>
+                <td><input type="text" id="benqi_9" name="benqi_9" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_9" name="shangnianzhi_9" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_9" name="tongbilv_9" /></td>
+             </tr> 
+              <tr>
+                <td  class="left_bg_2"colspan="2">单位产值综合能耗</td>
+                <td class="left_bg_2">吨标准煤/万元</td>
+                <td><input type="text" id="benqi_10" name="benqi_10" /></td>
+                <td colspan="2"><input type="text" id="shangnianzhi_10" name="shangnianzhi_10" /></td>
+                <td colspan="2"><input type="text" id="tongbilv_10" name="tongbilv_10" /></td>
+             </tr>  
+             <tr>
+                <td class="left_bg" colspan="2" rowspan="2">主要产品名称</td>
+                 <td class="left_bg" colspan="2">本期产能</td>
+                 <td class="left_bg" colspan="2" >本期产能</td>
+                <td class="left_bg" colspan="4">单位产品能耗（%）</td>   
+             </tr>
+             <tr>
+                 <td class="left_bg_2">数量</td>
+                 <td class="left_bg_2">计量单位</td>
+                 <td class="left_bg_2">数量</td>
+                 <td class="left_bg_2">计量单位</td>
+                 <td class="left_bg_2" colspan="2">数值</td>
+                 <td class="left_bg_2" colspan="2">计量单位</td>
+             </tr> 
+             <tr>
+                 <td colspan="2"><input type="text" id="zhuyaochanpin_1" name="zhuyaochanpin_1" /></td>
+                 <td><input type="text" id="shuliang_1_1" name="shuliang_1" /></td>
+                 <td><input type="text" id="jiliangdanwei_1_1" name="jiliangdanwei_1_1" /></td>
+                 <td><input type="text" id="shuliang_2_1" name="shuliang_2_1" /></td>
+                 <td><input type="text" id="jiliangdanwei_2_1" name="jiliangdanwei_2_1" /></td>
+                 <td colspan="2"><input type="text" id="shuliang_3_1" name="shuliang_3_1" /></td>
+                 <td colspan="2"><input type="text" id="jiliangdanwei_3_1" name="jiliangdanwei_3_1" /></td>
+             </tr>
+             <tr>
+                 <td colspan="2"><input type="text" id="zhuyaochanpin_2" name="zhuyaochanpin_2" /></td>
+                 <td><input type="text" id="shuliang_1_2" name="shuliang_2" /></td>
+                 <td><input type="text" id="jiliangdanwei_1_2" name="jiliangdanwei_1_2" /></td>
+                 <td><input type="text" id="shuliang_2_2" name="shuliang_2_2" /></td>
+                 <td><input type="text" id="jiliangdanwei_2_2" name="jiliangdanwei_2_2" /></td>
+                 <td colspan="2"><input type="text" id="shuliang_3_2" name="shuliang_3_2" /></td>
+                 <td colspan="2"><input type="text" id="jiliangdanwei_3_2" name="jiliangdanwei_3_2" /></td>
+             </tr>
+             <tr>
+                 <td colspan="2"><input type="text" id="zhuyaochanpin_3" name="zhuyaochanpin_3" /></td>
+                 <td><input type="text" id="shuliang_1_3" name="shuliang_3" /></td>
+                 <td><input type="text" id="jiliangdanwei_1_3" name="jiliangdanwei_1_3" /></td>
+                 <td><input type="text" id="shuliang_2_3" name="shuliang_2_3" /></td>
+                 <td><input type="text" id="jiliangdanwei_2_3" name="jiliangdanwei_2_3" /></td>
+                 <td colspan="2"><input type="text" id="shuliang_3_3" name="shuliang_3_3" /></td>
+                 <td colspan="2"><input type="text" id="jiliangdanwei_3_3" name="jiliangdanwei_3_3" /></td>
+             </tr>
+             <tr>
+                 <td colspan="2"><input type="text" id="zhuyaochanpin_4" name="zhuyaochanpin_4" /></td>
+                 <td><input type="text" id="shuliang_1_4" name="shuliang_4" /></td>
+                 <td><input type="text" id="jiliangdanwei_1_4" name="jiliangdanwei_1_4" /></td>
+                 <td><input type="text" id="shuliang_2_4" name="shuliang_2_4" /></td>
+                 <td><input type="text" id="jiliangdanwei_2_4" name="jiliangdanwei_2_4" /></td>
+                 <td colspan="2"><input type="text" id="shuliang_3_4" name="shuliang_3_4" /></td>
+                 <td colspan="2"><input type="text" id="jiliangdanwei_3_4" name="jiliangdanwei_3_4" /></td>
+             </tr>
+        </table>
+    </form>
+    <button type="submit" id="button" name="button">获取值</button>
+    <!-- JQ -->
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <!-- JQUI -->
+    <script type="text/javascript" src="js/jquery.ui.js"></script>
+    <!-- 验证 -->
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <!-- 验证中文 -->
+    <script type="text/javascript" src="js/messages_zh.min.js"></script>
+    <!-- 所有表格方法 -->
+    <script type="text/javascript" src="js/all_table.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#form').validate({
+                rules:{
+                    diqu:{required:true},
+                    lingyu:{required:true},
+                    hangye:{required:true},
+                    leixing:{required:true},
+                    daima:{required:true,farendaima:true},
+                    ziben:{wanyuan:true},
+                    xingming:{hanzi:true},
+                    fadingdianhua:{quhao:true},
+                    youzheng:{youzheng:true},
+                    quhuadaima:{quhuadaima:true},
+                    youxiang:{email:true},
+                    quhao:{quhao:true},
+                    lingdaodianhua:{quhao:true},
+                    nengyuanfuzeren:{required:true,hanzi:true},
+                    nengyuanshouji:{required:true,phone:true},
+                    benqi_1:{wanyuan:true},
+                    benqi_2:{wanyuan:true},
+                    benqi_3:{wanyuan:true},
+                    benqi_4:{shuliang:true},
+                    benqi_5:{shuliang:true},
+                    benqi_6:{wanyuan:true},
+                    benqi_7:{wanyuan:true},
+                    benqi_8:{wanyuan:true},
+                },
+                messages:{
+
+                },
+                highlight:function (element,errorClass) {
+                    $(element).css('border','2px solid red');
+                },
+                unhighlight:function (element,errorClass) {
+                    $(element).css('border','0 none');
+                },
+                // 验证成功后
+                submitHandler:function (form) {
+                    document.write(obj.get_posi_value());
+                }
+            });
+            // 注册日期 
+            $('#riqi,#tongguoriqi').datepicker({
+                changeMonth:true,
+                changeYear:true,
+                yearSuffix:'',
+                maxDate:0,
+                yearRange:'1950:2050',
+            });
+            $('#no').click(function () {
+                $('#yes').val('否');
+            });
+            $('#yes').click(function () {
+                $('#yes').val('是');
+            });
+            $('#tixino').click(function () {
+                $('#tixiyes').val('否');
+            });
+            $('#tixiyes').click(function () {
+                $('#tixiyes').val('是');
+            });
+            $('#button').click(function() {
+                $('#form').submit();
+            });
+            // 获取本地数据
+            $.each($('#form input[type="text"]'),function(i){
+                $($('#form input[type="text"]')[i]).attr({// 输入框添加id name
+                    class:'data_id'+(i),
+                });
+                if ($($('#form input[type="text"]')[i]).attr('class') == 'data_id'+i) {
+                    $($('#form input[type="text"]')[i]).val(obj.get_data('data_id'+i));
+                }
+            });
+            //本地保存
+            $('#form input[type="text"]').on('blur',function(){
+                $.each($('#form input[type="text"]'),function(i){
+                    obj.sava_data($($('#form input[type="text"]')[i]).attr('class'),$($('#form input[type="text"]')[i]).val());
+                });
+            });
+        });
+        // 法人代码
+        jQuery.validator.addMethod("farendaima", function(value, element) {   
+            var tel = /^[a-zA-Z0-9]{8}-[a-zA-Z0-9]$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写法人单位代码");
+        // 验证数字和小数点 ^[\u4e00-\u9fa5]*$
+        jQuery.validator.addMethod("wanyuan", function(value, element) {
+            var tel = /^\d+\.{0,1}\d*$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写数字");
+        // 汉字 
+        jQuery.validator.addMethod("hanzi", function(value, element) {   
+            var tel = /^[\u4e00-\u9fa5]*$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写姓名");
+        // 区号
+        jQuery.validator.addMethod("quhao", function(value, element) {   
+            var tel = /^\d{3,4}$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写区号");
+        // 邮政
+        jQuery.validator.addMethod("youzheng", function(value, element) {   
+            var tel = /^[1-9]\d{5}(?!\d)$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写邮政编码");
+        // 行政区划代码
+        jQuery.validator.addMethod("quhuadaima", function(value, element) {   
+            var tel = /^[0-9]*$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写行政区划代码");
+        // 手机
+        jQuery.validator.addMethod("phone", function(value, element) {   
+            var tel =  /^1[34578]\d{9}$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写手机");
+        // 整数
+        jQuery.validator.addMethod("shuliang", function(value, element) {   
+            var tel =  /^[1-9]\d*$/;
+            return this.optional(element) || (tel.test(value));
+        }, "请正确填写数量");
+    </script>
+</body>
+</html>

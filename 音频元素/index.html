@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<audio id="alarmAudio" src="music/alarm.mp3" preload="auto" loop="loop"></audio>
+		<input type="button" id="play" value="Play" />
+		<input type="button" name="stop" id="stop" value="Stop" />
+		<script type="text/javascript">
+			var audio = document.getElementById("alarmAudio");
+			document.getElementById("play").onclick=function(){
+				audio.play();
+			}
+			document.getElementById("stop").onclick=function(){
+				audio.pause();
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>读取Excel文件数据</title>
+    <style type="text/css">
+    	*{padding:0;margin:0;box-sizing: border-box;list-style: none;}
+    	body{background: #F5F5F5;}
+    	#box{width: 100%;padding:20px 0 0 50px;margin: 0 auto;}
+    	#box #mainLeft,#box #mainRight{padding: 10px;}
+    	#box #mainLeft{width:20%;float: left;font-size: 13px;overflow:hidden;}
+    	#box #mainRight{width:75%;float: left;}
+    	#drop{border: 1px solid silver;font-size:15px;background: white;height: 150px;line-height: 150px;text-align: center;border-radius: 2px;}
+    	#xlf{width: 100%;padding: 6px;border: 1px solid silver;cursor: pointer;color: blue;border-radius: 2px;}
+    	#box div{margin: 10px 0;}
+    	.table{font-size:15px;margin:10px 0 20px 0;border-right: 1px solid #9f9f9f;border-bottom: 1px solid #9f9f9f;}
+    	.table tr:nth-child(2n){background-color: #fafafa;}
+    	.table tr:hover{background-color: #eee;}
+    	.table td{height: 25px;text-align: center;border: 1px solid #9f9f9f;padding: 0 5px;border-right: 0 none;border-bottom: 0 none;}
+    	ol li{text-indent: 20px;line-height: 25px;}
+    	#update{cursor: pointer;height: 40px;padding: 0 10px;display: none;}
+    </style>
+</head>
+
+<body>
+	<div id="box">
+		<div id="mainLeft">
+			<div style="display: none;">
+				<select name="format">
+			        <option value="json" selected>JSON格式</option> 
+			        <!-- <option value="csv">CSV逗号分隔文本格式</option> -->
+			        <!-- <option value="form">Excel公式格式</option> -->
+			    </select>
+			</div>
+			<div>
+				<div>
+					<strong>请选择Excel文件:</strong>
+				</div>
+	        	<input type="file" name="xlfile" id="xlf"/>
+	    	</div>
+			<div id="drop">拖动 Excel 文件到这里也可以上传</div>
+	    	<div style="display: none;">
+	    		<p>
+	    			Web Workers: <input type="checkbox" name="useworker" checked>
+	    		</p>
+	    		<p>
+	    			数据格式转换: <input type="checkbox" name="xferable" checked>
+	    		</p>
+	    		<p>
+					二进制工作簿: <input type="checkbox" name="userabs" checked>
+	    		</p>
+	    	</div>
+	    	<div>
+				<p>读取文件格式:</p>
+				<ol>
+					<li>Excel 2007+ (XLS/XLSX/XLSM)</li>
+				</ol>
+				<p>输出文件格式:</p>
+				<ol>
+				    <li>JSON格式</li>
+				</ol>
+			</div>
+	    	<pre id="out"></pre>
+		</div>
+		<div id="mainRight">
+			<div>
+				<input id="update" type="button" value="上传到服务器">
+			</div>
+			<div id="tableContent">
+				
+			</div>
+		</div>
+		<br style="clear: both;">
+	</div>
+    <script type="text/javascript" src="dist/jquery-1.12.3.min.js"></script>
+    <!-- 读取Excel数据 生成tabel 上传table数据 -->
+    <script type="text/javascript" src="dist/shim.js"></script>
+    <script type="text/javascript" src="dist/jszip.js"></script>
+    <script type="text/javascript" src="dist/xlsx.min.js"></script>
+    <script type="text/javascript" src="dist/ods.js"></script>
+    <script type="text/javascript" src="dist/table.js"></script>
+</body>
+</html>

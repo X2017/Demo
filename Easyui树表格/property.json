@@ -1,0 +1,26 @@
+[
+	{
+		"name" : "PHP版本",
+		"value" : "5.4",
+		"group" : "系统信息",
+		"editor" : "text"
+	},
+	{
+		"name" : "CPU核心",
+		"value" : "双核四线程",
+		"group" : "系统信息",
+		"editor" : "text"
+	},
+	{
+		"name" : "超级管理员",
+		"value" : "Admin",
+		"group" : "管理信息",
+		"editor" : "text"
+	},
+	{
+		"name" : "管理密码",
+		"value" : "******",
+		"group" : "管理信息",
+		"editor" : "text"
+	}
+]

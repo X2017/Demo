@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>节能改造项目情况表</title>
+    <link rel="stylesheet" type="text/css" href="css/all_table.css">
+    <style type="text/css">
+        .header_bg td{color: black;font-size: 15px;}
+        .header_bg td:nth-child(odd){background: #5CC4A4;}
+        .header_bg td:nth-child(even){background: #63C1C4;}
+        .bg_1 td:nth-child(odd){background: #BDFCD4;}
+        .bg_1 td:nth-child(even){background: #BDF9FC;}
+        input{background: none;}
+        table{
+            margin: 0 auto;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            text-align: center;
+            width: 100%;
+        }
+        td{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            height: 30px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <table id="table" align="center" cellspacing="0" cellpadding="10" height="100">
+            <tr>
+                <td colSpan="8" style="background: #383938;color: white;font-size: 16px;"><strong>节能改造项目情况表</strong></td>
+            </tr>
+            <tr class="header_bg">
+                <td>序号</td>
+                <td>项目名称</td>
+                <td>主要改造内容</td>
+                <td>投资金额（万元）</td>
+                <td>节能效果（节能量，吨标准煤/年）</td>
+                <td>是否合同能源管理模式</td>
+                <td>项目进度</td>
+                <td>审批部门</td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="bg_1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+         </table>
+    </form>
+    <button type="submit" id="button" name="button">获取值</button>
+    <!-- JQ -->
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <!-- 方法 -->
+    <script type="text/javascript" src="js/all_table.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 生成输入框和存储本地数据
+            obj.create_input();
+            //var data = [];//行位置 列位置 所占行数 所占列数:数据
+            $('#button').click(function() {
+                // 返回的位置和值
+                document.write(obj.get_posi_value());
+            });
+        });
+    </script>
+</body>
+</html>

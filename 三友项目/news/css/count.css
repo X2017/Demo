@@ -1,0 +1,25 @@
+@charset 'utf-8';
+.countNav span,.countNav ul,.countNav li{
+	display: inline-block;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+.countNav{
+	text-align: center;
+	margin-top: 20px;
+}
+.countNav span{
+	width: 58px;
+	border:1px solid silver;
+}.countNav ul{
+	vertical-align: top;
+}.countNav li{
+	width: 30px;
+	border:1px solid silver;
+}
+.getPage{
+	background: #FFEFB1;
+	color: #840001;
+}

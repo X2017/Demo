@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    	body{background: black;}
+    	#allMess{position:absolute;top:100px;left:100px;z-index:99999;font-size:14px;}
+		#triangleLeft{width:0;height:0;border-top:12px solid transparent;border-right:25px solid #fff;border-bottom:12px solid transparent;position:relative;top:25px;left:-24px}
+		#content{padding:10px 20px 20px 30px;background:#fff;border-radius:3px;-moz-box-shadow:4px 1px 20px #000;-webkit-box-shadow:4px 1px 20px #000;box-shadow:4px 1px 20px #000;border:1px solid #28343D}
+		#close{width:30px;text-align:center;font-size: 25px;cursor: pointer;color: red;float:right;}
+		.messName{display:inline-block;width:100px;}
+		.itme:nth-child(even){background: silver;}
+    </style>
+</head>
+
+<body>
+    <div id="allMess">
+		<div id="triangleLeft"></div>
+		<div id="content">
+			<!-- <div id="close">X</div> -->
+			<ol id="messList">
+		        <div>
+					<li><div class="messName">当日用电量</div><strong class="eq">0.00</strong></li>
+				    <li><div class="messName">负荷数据</div><strong class="load">0.00</strong></li>
+				    <li><div class="messName">综合倍率</div><strong class="ctpt">0.00</strong></li>
+				    <li><div class="messName">电流A相</div><strong class="curra">0.00</strong></li>
+				    <li><div class="messName">电流B相</div><strong class="currb">0.00</strong></li>
+				    <li><div class="messName">电流C相</div><strong class="currc">0.00</strong></li>
+				    <li><div class="messName">总功率因数</div><strong class="factors">0.00</strong></li>
+				    <li><div class="messName">三相功率A相</div><strong class="factorsa">0.00</strong></li>
+				    <li><div class="messName">三相功率B相</div><strong class="factorsb">0.00</strong></li>
+				    <li><div class="messName">三相功率C相</div><strong class="factorsc">0.00</strong></li>
+				    <li><div class="messName">计量点ID</div><strong class="mpId">0.00</strong></li>
+				</div>
+			    <div>
+			    	<li><div class="messName">视在功率</div><strong class="pApprent">0.00</strong></li>
+				    <li><div class="messName">有功功率 </div><strong class="ps">0.00</strong></li>
+				    <li><div class="messName">无功功率</div><strong class="qs">0.00</strong></li>
+				    <li><div class="messName">频率</div><strong class="rate">0.00</strong></li>
+				    <li><div class="messName">电压A相</div><strong class="volta">0.00</strong></li>
+				    <li><div class="messName">电压B相</div><strong class="voltb">0.00</strong></li>
+				    <li><div class="messName">电压C相</div><strong class="voltc">0.00</strong></li>
+				    <li><div class="messName">三相相角A</div><strong class="voltpaa">0.00</strong></li>
+				    <li><div class="messName">三相相角B</div><strong class="voltpab">0.00</strong></li>
+				    <li><div class="messName">三相相角C</div><strong class="voltpac">0.00</strong></li>
+			    </div>
+		    </ol>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+@charset 'utf-8';
+body,fieldset,figure,form,h1,h2,h3,h4,h5,h6,ol,p,ul{margin:0;padding:0}
+button,div,figure,h1,h2,h3,h4,h5,h6,img,input,li,ul{box-sizing:border-box}
+body{background-color:#f5f5f5;font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei UI","Microsoft YaHei",SimHei,"\5B8B\4F53",simsun,sans-serif}
+img{display:block;max-width:100%}
+ol,ul{list-style:outside none none}
+a{text-decoration:none}
+.none{display:none}
+.clear:after{content:".";height:0;visibility:hidden;display:block;clear:both}
+body{background:#002b59;font-size: 15px;}

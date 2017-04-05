@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Easy UI</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+    <style>
+    .textbox {
+        height: 20px;
+        margin: 0;
+        padding: 0 2px;
+        box-sizing: content-box;
+    }
+    </style>
+</head>
+
+<body>
+    <table id="box"></table>
+    <table id="dg"></table>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/xlsx.core.min.js"></script>
+    <script src="js/blob.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+    <script src="dist/js/tableexport.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#dg").datagrid({
+            width: "600",
+            height: "500",
+            pagination: true,
+            showHeader: true,
+            fitColumns: true,
+            rownumbers: true,
+            border: false,
+            nowrap: false,
+            striped: true,
+            scrollbarSize: 0,
+            singleSelect: true,
+            checkOnSelect: false,
+            selectOnCheck: false,
+            columns: [
+                [{
+                    field: "time",
+                    title: "<strong>最新告警时间</strong>",
+                    sortable: true,
+                    width: 50
+                }, {
+                    field: "name",
+                    title: "<strong>告警名称</strong>",
+                    sortable: true,
+                    width: 100
+                }, {
+                    field: "count",
+                    title: "<strong>告警数量</strong>",
+                    sortable: true,
+                    width: 50
+                }, ]
+            ],
+            data: [{
+                "time": "asd",
+                "name": "asd",
+                "count": "asd"
+            }, {
+                "time": "asd",
+                "name": "asd",
+                "count": "asd"
+            }, {
+                "time": "asd",
+                "name": "asd",
+                "count": "asd"
+            }],
+        });
+        $('#dg').treegrid("appendRow", {
+            "time": "asd",
+            "name": "asd",
+            "count": "asd"
+        });
+        $('#box').treegrid({
+            data: [{
+                "aid": 123,
+                "aname": "系统管理",
+                "date": "2015-10-10",
+                "children": [{
+                    "aid": 789,
+                    "aname": "主机信息",
+                    "date": "2015-10-10",
+                    "children": [{
+                        "aid": 33,
+                        "aname": "主机信息",
+                        "date": "2015-10-10"
+                    }]
+                }]
+            }, {
+                "aid": 3333,
+                "aname": "会员管理",
+                "date": "2015-10-10",
+                "children": [{
+                    "aid": 634,
+                    "aname": "认证审核",
+                    "date": "2015-10-10"
+                }]
+            }],
+            width: 400,
+            idField: 'aid',
+            treeField: 'aname',
+            columns: [
+                [{
+                    field: 'aname',
+                    title: '菜单名称',
+                    width: 180,
+                }, {
+                    field: 'date',
+                    title: '创建时间',
+                    width: 180,
+                }, ]
+            ]
+        });
+        //$("table").tableExport({formats:["xlsx"]});
+    });
+
+    var aa = [{
+        content: "这是告警的详细内容",
+        id: "810A0",
+        name: "810A",
+        time: "20170215165904"
+    }, {
+        content: "这是告警的详细内容",
+        id: "810A2",
+        name: "810A",
+        time: "20170215165904"
+    }];
+
+    var bb = [{
+        content: "这是告警的详细内容",
+        id: "810A0",
+        name: "810A",
+        time: "20170215165904"
+    }, {
+        content: "这是告警的详细内容",
+        id: "810A3",
+        name: "810A",
+        time: "20170215165904"
+    }, {
+        content: "这是告警的详细内容",
+        id: "810A2",
+        name: "810A",
+        time: "20170215165904"
+    }, {
+        content: "这是告警的详细内容",
+        id: "810A4",
+        name: "810A",
+        time: "20170215165904"
+    }];
+
+    var selectId = [];
+    var allSameId = [];
+    $.each(aa, function(index, value) {
+        selectId.push(value.id);
+    });
+    $.each(bb, function(index, value) {
+        allSameId.push(value.id);
+    });
+    var getId = [];
+    var temp = selectId.concat(allSameId);
+    var o = {};
+    for (var i = 0; i < temp.length; i++)(temp[i] in o) ? o[temp[i]]++ : o[temp[i]] = 1;
+    /* for (x in o){
+         if (o[x] == 1){
+         	getId.push(x);
+         }
+     }*/
+    $.each(o, function(index, value) {
+        if (value == 1) {
+            getId.push(index);
+        }
+    });
+    $.each(getId, function(index, value) {
+        $.each(bb, function(index2, value2) {
+            if (value == value2.id) {
+                // console.log(value2);
+            };
+        });
+    });
+    // console.log(getId);
+
+    // var arr = [];
+    //    for (var i = 0; i < bb.length; i++) {
+    //        for (var k in bb[i]) {
+    //            if (k == "id") {
+    //                arr.push(bb[i][k]);
+    //            }
+    //        }
+    //    }
+    //    var arr1 = [];
+    //    for (var i = 0; i < aa.length; i++) {
+    //        for (var k in aa[i]) {
+    //            if (k == "id") {
+    //                arr1.push(aa[i][k]);
+    //            }
+    //        }
+    //    }
+    //    console.log(arr1);
+    //    console.log(arr);
+    //    var arr2=[];
+    //    for(i=0;i<arr.length;i++){
+    //        var flag=true;
+    //        for(j=0;j<arr1.length;j++){
+    //            if(arr1[j]==arr[i]){
+    //                flag=false;
+    //            }
+    //        }
+    //        if(flag){
+    //            arr2.push(arr[i])
+    //        }
+    //    }
+    //    console.log(arr2);
+    var alarmData = [{
+        "id": "810A0",
+        "time": "20170216170144",
+        "sourec": "集中器",
+        "sourecName": "集中器1",
+        "name": "810A",
+        "content": "1"
+    }, {
+        "id": "81021",
+        "time": "20170216170144",
+        "sourec": "表计",
+        "sourecName": "办公楼",
+        "name": "8102",
+        "content": "2"
+    }, {
+        "id": "810A2",
+        "time": "20170216170149",
+        "sourec": "集中器",
+        "sourecName": "集中器1",
+        "name": "810A",
+        "content": "3"
+    }, {
+        "id": "810A4",
+        "time": "20170216170154",
+        "sourec": "集中器",
+        "sourecName": "集中器1",
+        "name": "810A",
+        "content": "5"
+    }, {
+        "id": "81023",
+        "time": "20170216170149",
+        "sourec": "表计",
+        "sourecName": "办公楼",
+        "name": "8102",
+        "content": "4"
+    } ,{
+        "id": "81025",
+        "time": "20170216170154",
+        "sourec": "表计",
+        "sourecName": "办公楼",
+        "name": "8102",
+        "content": "6"
+    }],
+    getSelectId = ["810A4","81025"],
+    getarr = [];
+    for (var i = 0; i < getSelectId.length; i++) {
+	    getarr= alarmData.filter(function (item) {
+			if (item.id == getSelectId[i]){
+				console.log(item);
+			};	    	
+	    });
+    }
+    console.log(getarr);
+    console.log(getSelectId);
+   /* for (var i = 0; i < getSelectId.length; i++) {
+    	// console.log(getSelectId[i]);
+    	for (var j = 0; j < alarmData.length; j++) {
+   			flag = true;
+    		if (getSelectId[i] == alarmData[j].id) {
+    			// console.log(alarmData[j]);
+    			flag = false;
+    		}
+    		
+    	}
+    }*/
+    //for(i=0;i<arr.length;i++){
+    //        var flag=true;
+    //        for(j=0;j<arr1.length;j++){
+    //            if(arr1[j]==arr[i]){
+    //                flag=false;
+    //            }
+    //        }
+    //        if(flag){
+    //            arr2.push(arr[i])
+    //        }
+    //    }
+    </script>
+</body>
+
+</html>

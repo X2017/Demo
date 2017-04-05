@@ -1,0 +1,10 @@
+.TreeGrid{border-collapse:collapse;border:1px solid #789}
+.TreeGrid .header{background-color:#87CEEB;font-weight:600}
+.TreeGrid td{border:1px solid #E6E6FA;padding:4px 3px 2px 3px}
+.TreeGrid a{text-decoration:underline;color:#000}
+.TreeGrid a:hover{color:#00f}
+.TreeGrid .image_hand{border:0;cursor:hand;align:absmiddle}
+.TreeGrid .image_nohand{border:0;align:absmiddle}
+.TreeGrid .row_hover{background-color:#E6E6FA}
+.TreeGrid .row_active{background-color:#E0FFFF}
+.image_hand{cursor:pointer}

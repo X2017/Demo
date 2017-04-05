@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="彭亚欧" />
+<meta name="keywords" content="Js3D柱状图，html柱状图，amcharts生成3D柱状图,Js柱状图" />
+<meta name="description" content="Javascript生成3D柱状图" />
+<title>Js3D柱状图</title>
+<style type="text/css">
+
+#shuoming {
+	text-align: center;
+	margin-top: 50px;
+	width: 100%;
+	float: left
+}
+#shuoming p {
+	text-align: center;
+	line-height: 10px
+}
+#shuoming a {
+	color: #333;
+	font-size: 12px;
+	text-decoration: none;
+}
+#parentDiv{
+	width:700px;
+	height:400px;
+	border:1px solid #ccc;
+	margin:0 auto;
+	margin-top:100px;
+	overflow:hidden;
+}
+#Main{
+	width:700px;
+	height:400px;
+	margin-top:-17px;
+}
+</style>
+</head>
+
+<body>
+<div id="parentDiv">
+  <div id="Main">
+  </div>
+</div>
+<p style="text-align:center;">下一篇：<a style="color:#37a703; text-decoration:none;" href="http://www.pengyaou.com/Original/2014728/1b86d678-79c2-4c58-b579-e760b25c4b01.html">Js生成3D饼状图</a></p>
+<div id="shuoming">
+	<div> 
+		<p> <a href="#X">Copyright©2014 Pengyaou版权所有</a> <a>2014年3月12日</a>&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备14004625号</a> <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2e05dec2bf760074926a79e46eafbe40' type='text/javascript'%3E%3C/script%3E"));
+</script></p>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="http://www.pengyaou.com/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="http://sandbox.runjs.cn/uploads/rs/146/73fi1rab/amcharts.js"></script>  
+<script type="text/javascript">
+$(document).ready(function(e) {
+	GetSerialChart();
+});
+var json=[  
+  {"name":"数据1","value":"35"},  
+  {"name":"数据2","value":"60"},  
+  {"name":"数据3","value":"22"},
+  {"name":"数据4","value":"65"},
+  {"name":"数据5","value":"35"},  
+  {"name":"数据6","value":"22"},    
+  {"name":"数据7","value":"43"},
+  {"name":"数据8","value":"55"}    
+  ]  
+//柱状图  
+function GetSerialChart(){  
+       
+        chart = new AmCharts.AmSerialChart();  
+        chart.dataProvider = json;
+		//json数据的key  
+        chart.categoryField = "name";
+		//不选择      
+        chart.rotate = false;
+		//值越大柱状图面积越大  
+        chart.depth3D = 20;  
+		//柱子旋转角度角度
+        chart.angle = 30;  
+        var mCtCategoryAxis = chart.categoryAxis;  
+        mCtCategoryAxis.axisColor = "#efefef";
+		//背景颜色透明度
+        mCtCategoryAxis.fillAlpha = 0.5;  
+		//背景边框线透明度
+        mCtCategoryAxis.gridAlpha = 0;  
+        mCtCategoryAxis.fillColor = "#efefef";  
+        var valueAxis = new AmCharts.ValueAxis();
+		//左边刻度线颜色  
+        valueAxis.axisColor = "#ccc";  
+		//标题
+        valueAxis.title = "3D柱状图Demo"; 
+		 //刻度线透明度
+        valueAxis.gridAlpha = 0.2; 
+        chart.addValueAxis(valueAxis);  
+        var graph = new AmCharts.AmGraph();  
+        graph.title = "value";  
+        graph.valueField = "value";  
+        graph.type = "column";  
+        //鼠标移入提示信息
+        graph.balloonText = "测试数据[[category]] [[value]]";  
+		//边框透明度
+        graph.lineAlpha =0.3; 
+		//填充颜色 
+        graph.fillColors = "#b9121b";  
+        graph.fillAlphas = 1;  
+		
+        chart.addGraph(graph);  
+      
+        //显示在Main div中
+        chart.write("Main");  
+}  
+</script>
+</html>

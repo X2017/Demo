@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页告警</title>
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="jquery-easyui-1.4/themes/icon.css" />
+</head>
+
+<body>
+    <script type="text/javascript" src="jquery-easyui-1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-easyui-1.4/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+    var alarmtype = [{
+        "8101": "A相电压越上限",
+        "8102": "B相电压越上限",
+        "8103": "C相电压越上限",
+        "8104": "A相电压越下限",
+        "8105": "B相电压越下限",
+        "8106": "C相电压越下限",
+        "8107": "零序电流越上限",
+        "8108": "电压不平衡率超标",
+        "8109": "电流不平衡率超标",
+        "8201": "A相电流越限",
+        "8202": "B相电流越限",
+        "8203": "C相电流越限",
+        "0114": "A相CT二次侧短路(A相失流)",
+        "0115": "B相CT二次侧短路(B相失流)",
+        "0116": "C相CT二次侧短路(C相失流)",
+        "0117": "A相CT二次侧开路(A相断流)",
+        "0118": "B相CT二次侧开路(B相断流)",
+        "0119": "C相CT二次侧开路(C相断流)",
+        "0138": "通讯故障",
+        "0141": "终端停电",
+        "0142": "负荷过载",
+        "0143": "A相电流过负荷",
+        "0144": "B相电流过负荷",
+        "0145": "C相电流过负荷",
+        "0146": "A相电压断相",
+        "0147": "B相电压断相",
+        "0148": "C相电压断相",
+        "0149": "A相电压缺相(A相失压)",
+        "014A": "B相电压缺相(B相失压)",
+        "014B": "C相电压缺相(C相失压)",
+        "0170": "A相电压过压",
+        "0171": "B相电压过压",
+        "0172": "C相电压过压",
+        "0194": "A相CT二次侧短路恢复(A相失流恢复)",
+        "0195": "B相CT二次侧短路恢复(B相失流恢复)",
+        "0196": "C相CT二次侧短路恢复(C相失流恢复)",
+        "0197": "A相CT二次侧开路恢复(A相断流恢复)",
+        "0198": "B相CT二次侧开路恢复(B相断流恢复)",
+        "0199": "C相CT二次侧开路恢复(C相断流恢复)",
+        "01B8": "通讯故障恢复",
+        "01C1": "终端来电",
+        "01C2": "负荷过载恢复",
+        "01C3": "A相电流过负荷恢复",
+        "01C4": "B相电流过负荷恢复",
+        "01C5": "C相电流过负荷恢复",
+        "01C6": "A相电压断相恢复",
+        "01C7": "B相电压断相恢复",
+        "01C8": "C相电压断相恢复",
+        "01C9": "A相电压缺相恢复(A相失压恢复)",
+        "01CA": "B相电压缺相恢复(B相失压恢复)",
+        "01CB": "C相电压缺相恢复(C相失压恢复)",
+        "01F0": "A相电压过压恢复",
+        "01F1": "B相电压过压恢复",
+        "01F2": "C相电压过压恢复",
+        "810A": "功率因数越上限",
+        "A001": "维保告警",
+        "W001": "日用电量越上限",
+        "W002": "月用电量越上限"
+    }]
+    var alarmData = {
+            "dataList": [{
+                "fn": "1",
+                "frameId": "22",
+                "gettype": "20170117194333",
+                "itemList": [{
+                    "type": "告警编码",
+                    "no": "0E0100",
+                    "val": "810A"
+                }, {
+                    "type": "告警时标",
+                    "no": "0E0101",
+                    "val": "20170117194333"
+                }, {
+                    "type": "告警内容",
+                    "no": "0E0102",
+                    "val": "1 这是告警的详细内容"
+                }],
+                "pn": "0",
+                "proto": "3-1",
+                "rtua": "3845490",
+                "tmUUID": ""
+            }, {
+                "fn": "1",
+                "frameId": "22",
+                "gettype": "20170127194333",
+                "itemList": [{
+                    "type": "告警编码",
+                    "no": "0E0100",
+                    "val": "810A"
+                }, {
+                    "type": "告警时标",
+                    "no": "0E0101",
+                    "val": "20170127194333"
+                }, {
+                    "type": "告警内容",
+                    "no": "0E0102",
+                    "val": "1 这是告警的详细内容"
+                }],
+                "pn": "0",
+                "proto": "3-1",
+                "rtua": "3845490",
+                "tmUUID": ""
+            }, {
+                "fn": "1",
+                "frameId": "22",
+                "gettype": "20170208210756",
+                "itemList": [{
+                    "type": "告警编码",
+                    "no": "0E0100",
+                    "val": "810A"
+                }, {
+                    "type": "告警时标",
+                    "no": "0E0101",
+                    "val": "20170208210756"
+                }, {
+                    "type": "告警内容",
+                    "no": "0E0102",
+                    "val": "2 这是告警的详细内容"
+                }],
+                "pn": "0",
+                "proto": "3-1",
+                "rtua": "3845490",
+                "tmUUID": ""
+            }, {
+                "fn": "1",
+                "frameId": "22",
+                "gettype": "20170117194333",
+                "itemList": [{
+                    "type": "告警编码",
+                    "no": "0E0100",
+                    "val": "0114" //告警编码有重复的,取最新时间
+                }, {
+                    "type": "告警时标",
+                    "no": "0E0101",
+                    "val": "20170117194333" //告警时间
+                }, {
+                    "type": "告警内容",
+                    "no": "0E0102",
+                    "val": "这是告警的详细内容"
+                }],
+                "pn": "0",
+                "proto": "3-1",
+                "rtua": "3845490",
+                "tmUUID": ""
+            }],
+            "dataType": "0E",
+            "dldp": "",
+            "frontPCNo": "A0000009",
+            "msgType": "1",
+            "reqOrRespNo": "54"
+        }
+        /* 从后台重复获取数据,最后筛选出需要的数据,拼接成JSON
+            [{
+                "type":"20170208210756",//筛选相同的告警 获取最新时间
+                "type":"810A",//告警编码
+                "count":"3 告警数量 810A有3条" //810A有3条
+            },{
+                "type":"20170117194333",
+                "type":"0114",//其它告警编码
+                "count":"1"
+            }]
+        */
+        // var alarmSort = [];
+        //模拟重复获取数据
+        // setInterval(function() {
+        //  $.each(alarmData, function(index, value) {
+        //      if (value instanceof Array == true) {
+        //          alarmSort = [];
+        //          $.each(value, function(index2, value2) {
+        //              for (var i = 0; i < value2.itemList.length; i++) {
+        //                  alarmSort.push(value2.itemList[i].val);
+        //              }
+        //          });
+        //      }
+        //  });
+        // console.log(alarmSort);
+        // }, 3000);
+
+    var str = "a,b,c,d,"
+    var reg = /,$/gi;
+    str = str.replace(reg, "");
+
+    var list = [{
+        "cid": "1",
+        "type": "图书",
+        "pid": "0",
+        "type": "1"
+    }, {
+        "cid": "2",
+        "type": "音像",
+        "pid": "0",
+        "type": "1"
+    }, {
+        "cid": "3",
+        "type": "电子书",
+        "pid": "0",
+        "type": "1"
+    }, {
+        "cid": "4",
+        "type": "家用电器",
+        "pid": "0",
+        "type": "2"
+    }];
+    // 保存 type 到 items 数组的映射表
+    var types = {};
+    // 按 list 中 type 的顺序生成新的列表
+    // 每个元素都是一个 { type, items }
+    var newList = [];
+    list.forEach(function(item) {
+        var typeItems = types[item.type];
+        // typeItems 无值说明映射表里还没加入这个 type
+        if (!typeItems) {
+            // 产生一个新的 items 列表
+            typeItems = [];
+            // 将 type 这个 items 列表加入映射表
+            types[item.type] = typeItems;
+
+            // 因为是个新的 type，所以加入 newList
+            newList.push({
+                type: item.type,
+                items: typeItems
+            });
+        }
+        // 这里 items 就是按类型找到的元素组
+        // 在 items 中加入当前 item
+        typeItems.push(item);
+    });
+    // console.log(newList);
+
+    var alarmJson = [{
+        "type": "810A",
+        "time": "20170210103610",
+        "content": "这是告警的详细内容"
+    }, {
+        "type": "8102",
+        "time": "20170210103610",
+        "content": "这是另一个告警的详细内容"
+    }, {
+        "type": "810A",
+        "time": "20170210103615",
+        "content": "这是告警的详细内容"
+    }, {
+        "type": "8102",
+        "time": "20170210103615",
+        "content": "这是另一个告警的详细内容"
+    }]
+    var alarmType = {}; // 保存 type 到 items 数组的映射表
+    var alarmSort = []; // 按 alarmJson 中 type 的顺序生成新的列表 每个元素都是一个 { type, items }
+    alarmJson.forEach(function(item) {
+        var typeItem = alarmType[item.type];
+        if (!typeItem) {
+            typeItem = []; // 产生一个新的 items 列表
+            alarmType[item.type] = typeItem; // 将 type 这个 items 列表加入映射表
+            alarmSort.push({ // 新的type 所以加入 alarmSort
+                type: item.type,
+                item: typeItem
+            });
+        }
+        typeItem.push(item); // 按类型找到的元素组
+    });
+
+    var alarmSortMess="[";
+    $.each(alarmSort, function(index, value) {
+        if (index > 0) {
+            alarmSortMess += ",";
+        }
+        alarmSortMess += "{\"time\":\"" + value.item[value.item.length-1].time
+                +"\",\"type\":\"" + value.type
+                +"\",\"count\":\""+value.item.length+ "\"}";
+        
+    });
+    console.log(alarmSortMess+']');
+    </script>
+</body>
+
+</html>
+
+formatter:function(row,index,value){
+                /*if(index.url != ''){
+                  return '<img class=photo src='+index.url+' >';
+                }*/
+                console.log(index);
+                /*$.each(alarmName[0],function(index2,value2){
+                    console.log(value2);
+                });*/
+            } 

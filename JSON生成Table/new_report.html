@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>公司各电表月有功用电量</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #table,#table td{border: 1px solid black;}
+        #table td{height: 25px;text-align: center;}
+        #table tr:nth-child(1),#table tr:nth-child(2),#table tr:nth-child(3){font-weight: bold;}
+        .none{display: none;}
+    </style>
+</head>
+<body>
+	<button id="button">button</button>
+    <form id="form">
+        <table id="table" border="0" cellpadding="0" cellspacing="0" style='border-collapse:collapse;margin: 0 auto;width: 100%;'>
+            
+            <tr style='height:35.25pt'>
+                <td colspan="20" style="font-size: 25px;">公司各电表月有功用电量</td>
+            </tr>
+            <tr>
+                <td rowspan="2">序号</td>
+                <td id="afterTd" colspan="" rowspan="2">分类</td>
+                <td colspan="3">上月表码</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td colspan="3">本月表码</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td colspan="3">行码差数</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td rowspan="2">倍率</td>
+                <td colspan="3">分表用电量(kw/h)</td>
+                <td class="none"></td>
+                <td class="none"></td>
+                <td rowspan="2">总电量(kw/h)</td>
+                <td class="none"></td>
+            </tr>
+            <tr>
+                <td id="beforeTd">高峰</td>
+                <td>平段</td>
+                <td>低谷</td>
+                <td>高峰</td>
+                <td>平段</td>
+                <td>低谷</td>
+                <td>高峰</td>
+                <td>平段</td>
+                <td>低谷</td>
+                <td class="none"></td>
+                <td>高峰</td>
+                <td>平段</td>
+                <td>低谷</td>
+                <td class="none"></td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="js/all_table.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var json = [{"id":"364061218_8","text":"2#电房1250kvA总表","layer":1,"lastMonthV":"2016.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"600","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"364061218_5","text":"一厂区10#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"6627874_1","text":"一厂区1#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"6693410_1","text":"一厂区2#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"6693410_2","text":"一厂区3#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"364061218_6","text":"一厂区4#5#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"4203042_1","text":"一厂区5#盘拉机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"364061218_1","text":"一厂区6#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"364061218_2","text":"一厂区7#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"364061218_4","text":"一厂区8#盘拉机+一厂区复绕总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"364061218_3","text":"一厂区9#盘拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"13181474_4","text":"3#电房2000kvA总表","layer":1,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"800","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"13181474_2","text":"二厂区1#平引炉","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"13181474_3","text":"二厂区1#轧机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"13181474_1","text":"二厂区2#平引炉","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"72819234_1","text":"制氮机空压机冷却塔总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"263004706_1","text":"4011开关(新电房1600kvA总表)","layer":1,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"263004706_2","text":"4021开关(三厂区辊底式盘管炉)","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"263004706_3","text":"4022开关(三厂区辊底式直管炉)","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"263004706_6","text":"4033开关(三厂区照明)","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"263004706_7","text":"4034开关(三厂区1米6退火炉)","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"263004706_11","text":"4041开关(办公室+四厂区总表)","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"263004706_12","text":"4042开关(1#联拉机+春节用电)","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"1","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"364061218_7","text":"二厂区1#联拉机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]}]},{"id":"218440226_6","text":"4#电房总表","layer":1,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"800","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"218440226_2","text":"一厂区2#联拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"218440226_1","text":"一厂区2#轧机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"218440226_4","text":"一厂区3#联拉机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"218440226_5","text":"一厂区3#平引炉+一厂区机修总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"218440226_3","text":"一厂区3#轧机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"291250722_6","text":"5#电房总表","layer":1,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"800","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"291250722_5","text":"五厂区550+2#350挤压机总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"19735074_4","text":"五厂区2#350挤压机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"19735074_5","text":"五厂区550挤压机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"291250722_1","text":"一厂区4#平引炉","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"291250722_2","text":"一厂区5#平引炉","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"291250722_3","text":"一厂区6#平引炉","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"291250722_4","text":"一厂区熔铸炉水泵","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"39395874_11","text":"八厂区总表1250kvA","layer":1,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"500","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"39395874_3","text":"八厂区1375T挤压机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_10","text":"八厂区3#4#半连铸炉总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"500","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_1","text":"八厂区冷轧机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_2","text":"八厂区热轧机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"60","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_12","text":"七厂区450冷轧机","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"160","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"39395874_9","text":"八厂区总表2000kvA","layer":1,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"800","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"39395874_4","text":"八厂区1#2#半连铸炉总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"200","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_5","text":"六厂区总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_7","text":"七厂区总表","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"150","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"39395874_6","text":"五厂区总表1","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"19735074_1","text":"五厂区2#400挤压机总表","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"300","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"19735074_3","text":"五厂区630挤压机+连续挤压机水泵","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"300","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"4203042_1","text":"一厂区5#盘拉机","layer":4,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"19735074_2","text":"五厂区小电排100T拉伸机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"300","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]}]},{"id":"39395874_8","text":"五厂区总表2","layer":2,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"400","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[{"id":"19800610_2","text":"五厂区1#350挤压机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"123.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"19800610_1","text":"五厂区1#400挤压机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"120","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"0.00","children":[]},{"id":"19800610_3","text":"五厂区小电排拉拔机","layer":3,"lastMonthV":"1.00","curMonthV":"5.00","subMonthV":"4.00","multiRate":"80","upElecV":"0.00","midElecV":"0.00","downElecV":"0.00","totalElecV":"789.00","children":[]}]}]}];
+            var count = 0; //计数所有
+            var table = $('#table').get(0);
+            var layerFlag = ['☆','◇','△','○'];
+            var tempColspan = []; //合并行 存储所有分层信息
+             //后面8个数值顺序 lastMonthV curMonthV subMonthV multiRate upElecV midElecV downElecV totalElecV
+            var tdData = []; //全部行数据 [ "364061218_8", "2#电房1250kvA总表", 1, "0.00", "0.00", "0.00", "600", "0.00", "0.00", "0.00", "0.00"]
+            var tempData = []; //保存所有行数值数据 不保存文本信息 从上面的tdData的第3开始保存
+            var dataCount = 0; //获取上面tempData
+            recursion(json);
+            function recursion(jsondata){ // 循环所有
+                $.each(jsondata,function (index,value){
+                    if (jsondata[index].children != null){
+                        tdData[count]=[]; //每一行的全部数据就是一个数组 到后面把后面的8个数值拆分保存到一个临时数组去填充到td
+                        for(var i in value){
+                            if(typeof value[i] != 'object'){
+                                tempColspan.push(value.layer); //保存所有层信息
+                                tdData[count].push(value[i]); //保存所有数据
+                            }
+                        }
+                        count++;
+                        var data = jsondata[index].children;
+                        recursion(data);
+                    }
+                });
+            }
+            $('#afterTd').attr('colspan',maxArray(unRepeat(tempColspan))+1);  //第二行的第二个td 合并最大的分层+1
+            for(var i = 1; i < maxArray(unRepeat(tempColspan))+1; i++){ //合并了行 第一行合并的位置后面添加的td等于 合并-1
+                $('#afterTd').after('<td class="none"></td>');
+            }
+            for(var i = 0; i < (maxArray(unRepeat(tempColspan))+2); i++){ //合并了行 第二行合并的位置前面添加的td等于 合并数量+2 序号和五角星占了两个
+                $('#beforeTd').before('<td class="none"></td>');
+            }
+            console.log(tdData[0].length);
+            for(var i = 0; i < tdData.length; i++){ //循环所有的行数据
+                $(table).append('<tr></tr>'); // 添加行
+                for(var j = 0; j < ((tdData[0].length - 1)+tdData[i][2]); j++){
+                    if (table.rows[3+i].cells.length < ((tdData[0].length - 1)+tdData[i][2])){ //从第三行开始添加td 每行添加的td长度不一样 用层的信息去添加td
+                        $(table.rows[3+i]).append('<td></td>');
+                    }
+                }
+                $(table.rows[3+i].cells[0]).text(i+1); //第一个td添加行号
+                var tdLayer = table.rows[3+i].cells[tdData[i][2]+1]; //层位置
+                // 添加分类信息 将每个层位置添加到class 单元格合并 合并4个class是1 3个是2 以此类推
+                $(tdLayer).text(tdData[i][1]).attr('class',tdData[i][2]).attr('colspan',(maxArray(unRepeat(tempColspan)) - parseInt($(tdLayer).attr('class')))+1).css('text-align','left').prev().text(layerFlag[$(tdLayer).attr('class') - 1]);
+                for(var k = 1; k < $(tdLayer).attr('class'); k++){ //根据层的class访问前面的边框
+                    $(table.rows[3+i].cells[k]).css({
+                        borderTop:'0 none',
+                        borderBottom:'0 none'
+                    });
+                }
+                for(var l = tdData[i][2]+2; l < (tdData[i][2]+2)+3; l++){ //比如层是1加2=3 加2访问层后面的3个td 加3是因为要访问3个 因为每个层信息的td位置不一样 
+                    $(table.rows[3+i].cells[l]).attr('colspan',3); //根据每个class层信息合并后面的td
+                }
+                for(var m = 3; m < tdData[0].length; m++){ //把tdData行数组里面的数值数据全部保存 从第三个开始保存 tdData的所有数值数据
+                    tempData.push(tdData[i][m]);
+                }
+                for(var n = tdData[i][2]+2; n < (tdData[i][2]+2)+8; n++){ //填充数据 加8是访问层后面的8个td 每个层位置不一样 但是后面的数据长度一样
+                    $(table.rows[3+i].cells[n]).text(tempData[dataCount]);  //n循环次数的和tempData长度一样 用dataCount++去访问填充
+                    dataCount++;
+                }
+            }
+           for(var j = 3; j < table.rows.length; j++){ //从第三行开始查找有colspan的td
+                for(var k = 0; k < table.rows[j].cells.length; k++){
+                    if(table.rows[j].cells[k].colSpan > 1){
+                        for(var l = 1; l < table.rows[j].cells[k].colSpan; l++){ //从有colspan的td开始添加 td.none 添加长度等于合并的colspan - 1
+                            $(table.rows[j].cells[k]).after('<td class="none"></td>');
+                        }
+                    }
+                }
+            }
+        });
+        $('#button').click(function (){
+            console.log(obj.get_posi_value('table'));
+        });
+        // 最大数组
+        function maxArray(array){
+            var max = array[0];
+            for(var i=1;i<array.length;i++){
+                if(max<array[i]){
+                    max=array[i];
+                }
+            }
+            return max;
+        }
+        // 数组去重
+        function unRepeat(array){
+            var n = [];
+            for(var i = 0; i < array.length; i++){
+                if (n.indexOf(array[i]) == -1){
+                    n.push(array[i]);
+                }
+            }
+            return n;
+        }
+    </script>
+</body>
+</html>

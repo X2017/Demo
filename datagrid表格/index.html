@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态获取表格数据</title>
+	<!-- 默认主题CSS -->
+	<link rel="stylesheet" href="jquery-easyui-1.5/themes/default/easyui.css">
+	<!--EasyUI主题图标 -->
+	<link rel="stylesheet" href="jquery-easyui-1.5/themes/icon.css">
+	<style type="text/css">
+		#box{position: relative;}
+		#table{position: absolute;z-index: 9999;top: 0;left: 256px;top: 28px;font-size: 13px;color: #000000;border-collapse:collapse;}
+		#table tr{height: 25px;}
+		#table td{border:1px dotted #CCCCCC;padding: 0 5px;width: 100px;}
+		.first_td{background: #F6F6F6;}
+	</style>
+</head>
+<body>
+	<ol>
+		<li><a href="#" id="jizhongqi">集中器</a></li>
+		<li><a href="#" id="dianbao">电表</a></li>
+	</ol>
+	<button id="button_1">按钮 1</button>
+	<button id="button_2">按钮 2</button>
+	<button id="button_3">按钮 3</button>
+	<div id="tool">
+		<label for="search_man">设备名称<input type="text" id="name" name="name" class="input"></label>
+		<a href="#" onclick="" class="easyui-linkbutton" iconCls="icon-search" >搜索</a>
+	</div>
+	<div id="box">
+		<table id="datagrid" style="width:400px;height:235px;"></table>
+		<table id="table">
+			<!-- <tbody>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+				<tr>
+					<td>test 1</td>
+					<td>test 2</td>
+					<td>test 3</td>
+				</tr>
+			</tbody> -->
+		</table>	
+	</div>
+	<!-- JQ -->
+	<script type="text/javascript" src="jquery-easyui-1.5/jquery.min.js"></script>
+	<!-- EasyUI -->
+	<script type="text/javascript" src="jquery-easyui-1.5/jquery.easyui.min.js"></script>
+	<!-- EasyUI中文包 -->
+	<script type="text/javascript" src="jquery-easyui-1.5/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#datagrid').datagrid({
+				url:'php/show_jizhongqi.php',
+			    pagination:true,//分页
+			    pageSize:6,//显示数据大小 page
+			    pageList:[6,12,24],//下拉分页 rows
+			    showHeader:true,
+			    fitColumns:true,//自适应
+			    // singleSelect:true,//只能选择一行
+			    rownumbers:true,//行号
+			    border:false,
+			    nowrap:false,//是否在一行显示
+			    toolbar:'#tool',//工具栏
+			    //sortName:'create_date',//设置时间作为排序
+				//sortOrder:'desc',//排序方式
+				remoteSort:false,//服务器排序,
+				striped:true,//斑马线效果
+				scrollbarSize:0,//滚动条大小
+				frozenColumns:[[
+					{field:'id',title:'ID',checkbox:true,width:100},
+					{field:'name_id',title:'设备ID',width:100},
+					{field:'name',title:'设备名称',width:100}
+				]],
+				onClickRow:function(rowIndex,rowData){
+					console.log(rowData);
+				}
+			});
+			$('#jizhongqi').click(function () {
+				$('#datagrid').datagrid({
+					url:'php/show_jizhongqi.php',
+				});
+			});
+			$('#dianbao').click(function () {
+				$('#datagrid').datagrid({
+					url:'php/show_dianbiao.php',
+				});
+			});
+			$('#button_1').click(function () {
+				/*try{
+					$('#datagrid').datagrid({
+					    columns:[[
+					       {field: 'title_test_1', title:'测试一', width: 100 },
+					       {field: 'title_test_2',title: '测试二', width: 100 },
+					       {field: 'title_test_3',title: '测试三', width: 100 },  
+					       // {field: 'name', title:'测试一', width: 100 },
+					       // {field: 'name',title: '测试二', width: 100 },
+					       // {field: 'name',title: '测试三', width: 100 },  
+					   ]]
+					}).datagrid('loadData');
+				}catch(error){}
+				var table = $('.datagrid-view2 .datagrid-body').find('table').get(0);
+				console.log($(table.tBodies[0].rows[1]).append('<h1>asdasd</h1>'));
+				// var rows = $('#datagrid').datagrid('getChecked');
+				var rows = $('#datagrid').datagrid('getSelections');
+				for (var i = 0; i < rows.length; i++) {
+					var data=rows[i];
+					var index=$('#datagrid').datagrid('getRowIndex',data);//得到勾选的行
+					console.log(index);
+				}*/
+				var arr = ['asd_1','asd_2','asd_3','asd_4']; //表格
+				// 添加行
+				var rows = $('#datagrid').datagrid('getData');
+				for (var i = 0; i < rows.rows.length + 1; i++) {
+					$('#table').append('<tr></tr>');
+				}
+				var table = $('#table').get(0);
+				// 第一行
+				for (var i = 0; i < 4; i++) {
+					$(table.tBodies[0].rows[0]).append('<td class="first_td">'+arr[i]+'</td>');
+				}
+				// 行内生成td
+				for (var i = 1; i < rows.rows.length + 1; i++) {
+					for (var j = 0; j < 4; j++) {
+						$(table.tBodies[0].rows[i]).append('<td></td>');
+					}
+				}
+				var datagrid = $('#datagrid').datagrid('getSelections');
+				console.log(datagrid);
+				/*var index_arr = [];
+				var arr2 = ['qwe_1','qwe_2','qwe_3','qwe_4'];
+				var arr3 = ['zxc_1','zxc_2','zcx_3','zxc_4'];
+				for (var i = 0; i < datagrid.length; i++) {
+					var data=datagrid[i];
+					var index=$('#datagrid').datagrid('getRowIndex',data);//得到勾选的行
+					index_arr.push(index);
+					for (var j = 0; j < 4; j++) {
+						for (var k = 0; k < index_arr.length; k++) {
+							$(table.tBodies[0].rows[index_arr[k]+1].cells[j]).text('asd');
+						}
+					}
+				}*/
+			});
+			$('#button_2').click(function () {
+				$('#datagrid').datagrid({
+	                columns:[[
+		               {field: 'name',title:'测试一', width: 100 },
+		               {field: 'name',title:'测试二', width: 100 },
+		               {field: 'name',title:'测试三', width: 100 },
+		               {field: 'name',title:'测试三', width: 100 },
+		               {field: 'name',title:'测试三', width: 100 },
+		               {field: 'name',title:'测试三', width: 100 },
+	               ]]
+	            }).datagrid('loadData');
+			});
+		});
+	</script>
+</body>
+</html>
